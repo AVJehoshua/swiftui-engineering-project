@@ -30,7 +30,7 @@ this module:
   conventional choice in the iOS dev community).
 - Integrate a SwiftUI app with an existing backend using RESTful APIs.
 - Implement advanced SwiftUI components like List views, sheets, Alerts and even
-  custom structs to enhance the user interface.
+  custom `structs` to enhance the user interface.
 - Manage complex states using SwiftUI annotations such as @State and @Binding
   (for data binding and state management).
 - Handle networking errors and provide user feedback using SwiftUI's built-in
