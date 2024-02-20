@@ -9,7 +9,17 @@ import SwiftUI
 
 struct TestView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            FeedView()
+                .tabItem {
+                    Label("Feed", systemImage: "list.bullet.below.rectangle")
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Profile", systemImage: "person.crop.circle.fill")
+                }
+        }
+        
     }
 }
 
