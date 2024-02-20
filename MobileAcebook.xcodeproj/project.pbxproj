@@ -22,6 +22,8 @@
 		EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */; };
 		EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB42B84DF5F00DBD927 /* MockPostService.swift */; };
 		EA682AB72B84E45400DBD927 /* MockPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB62B84E45400DBD927 /* MockPostView.swift */; };
+		D32326F82B84D39100C3E23B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32326F72B84D39100C3E23B /* Post.swift */; };
+		D32326FA2B84D39B00C3E23B /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32326F92B84D39B00C3E23B /* PostService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
 		EA682AB42B84DF5F00DBD927 /* MockPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostService.swift; sourceTree = "<group>"; };
 		EA682AB62B84E45400DBD927 /* MockPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostView.swift; sourceTree = "<group>"; };
+		D32326F72B84D39100C3E23B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D32326F92B84D39B00C3E23B /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 			children = (
 				EA682AB42B84DF5F00DBD927 /* MockPostService.swift */,
 				AE5D85E02AC9AFA9009680C6 /* AuthenticationService.swift */,
+				D32326F92B84D39B00C3E23B /* PostService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				AE5D85E72AC9B29A009680C6 /* User.swift */,
+				D32326F72B84D39100C3E23B /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,7 +332,9 @@
 				EA682AB72B84E45400DBD927 /* MockPostView.swift in Sources */,
 				EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */,
 				AE5D85E62AC9B077009680C6 /* AuthenticationServiceProtocol.swift in Sources */,
+				D32326FA2B84D39B00C3E23B /* PostService.swift in Sources */,
 				AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */,
+				D32326F82B84D39100C3E23B /* Post.swift in Sources */,
 				AE5D85E82AC9B29A009680C6 /* User.swift in Sources */,
 				AE5D85DA2AC8A337009680C6 /* WelcomePageView.swift in Sources */,
 			);
