@@ -9,8 +9,10 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @State private var username = ""
-    @State private var email = ""
+    let signUp = SignUp()
+    
+    @State public var username = ""
+    @State public var email = ""
     @State private var password = ""
     
     var body: some View {
@@ -20,6 +22,7 @@ struct SignUpView: View {
                 .scaledToFit()
                 .frame(width: 200, height: 200)
                 .accessibilityIdentifier("makers-logo")
+
             
             Form {
                 Section {
@@ -27,6 +30,7 @@ struct SignUpView: View {
                 }
                 
                 Section {
+                
                     TextField("Email", text: $email)
                         .autocapitalization(.none)
                 }
@@ -36,8 +40,8 @@ struct SignUpView: View {
                 }
                 
                 Button("Create an account") {
-                    let user = User(username: username, password: password)
-                    print(user)
+                    let user = User(username: username, password: password, email: email)
+                    signUp.signUpUser(user: user)
                     //Code for creating an account
                 }
                     .foregroundColor(.white)
