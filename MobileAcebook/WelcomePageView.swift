@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let signUp = SignUp()
+
 struct WelcomePageView: View {
     var body: some View {
         ZStack {
@@ -29,7 +31,7 @@ struct WelcomePageView: View {
                 Spacer()
 
                 Button("Sign Up") {
-                    // TODO: sign up logic
+                    signUp.signUpUser(user: User(username: "Test username", password: "Test password", email: "Test2@email.com"))
                 }
                 .accessibilityIdentifier("signUpButton")
                 
