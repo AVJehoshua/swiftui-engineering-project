@@ -19,6 +19,9 @@
 		AE5D85E32AC9AFD2009680C6 /* MockAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85E22AC9AFD2009680C6 /* MockAuthenticationService.swift */; };
 		AE5D85E62AC9B077009680C6 /* AuthenticationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85E52AC9B077009680C6 /* AuthenticationServiceProtocol.swift */; };
 		AE5D85E82AC9B29A009680C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85E72AC9B29A009680C6 /* User.swift */; };
+		EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */; };
+		EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB42B84DF5F00DBD927 /* MockPostService.swift */; };
+		EA682AB72B84E45400DBD927 /* MockPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB62B84E45400DBD927 /* MockPostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		AE5D85E22AC9AFD2009680C6 /* MockAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthenticationService.swift; sourceTree = "<group>"; };
 		AE5D85E52AC9B077009680C6 /* AuthenticationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceProtocol.swift; sourceTree = "<group>"; };
 		AE5D85E72AC9B29A009680C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
+		EA682AB42B84DF5F00DBD927 /* MockPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostService.swift; sourceTree = "<group>"; };
+		EA682AB62B84E45400DBD927 /* MockPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,7 @@
 		AE5D85DD2AC9AF72009680C6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EA682AB42B84DF5F00DBD927 /* MockPostService.swift */,
 				AE5D85E02AC9AFA9009680C6 /* AuthenticationService.swift */,
 			);
 			path = Services;
@@ -178,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				AE5D85D92AC8A337009680C6 /* WelcomePageView.swift */,
+				EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */,
+				EA682AB62B84E45400DBD927 /* MockPostView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE5D85E12AC9AFA9009680C6 /* AuthenticationService.swift in Sources */,
+				EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */,
+				EA682AB72B84E45400DBD927 /* MockPostView.swift in Sources */,
+				EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */,
 				AE5D85E62AC9B077009680C6 /* AuthenticationServiceProtocol.swift in Sources */,
 				AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */,
 				AE5D85E82AC9B29A009680C6 /* User.swift in Sources */,
