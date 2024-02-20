@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MockPostView: View {
+struct PostView: View {
     let post: Post
     
     var body: some View{
@@ -18,6 +18,6 @@ struct MockPostView: View {
     }
 }
 
-#Preview {
-    MockPostView(post: Post(id: "1", message: "Example Post", comments: 1))
-}
+//#Preview {
+//    PostView(post: Post(id: "1", message: "Example Post", comments: 1))
+//}
