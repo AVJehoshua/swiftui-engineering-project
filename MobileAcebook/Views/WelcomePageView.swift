@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WelcomePageView: View {
+    
+    let posts = PostsViewModel()
+    
     var body: some View {
         ZStack {
             VStack {
@@ -29,7 +32,8 @@ struct WelcomePageView: View {
                 Spacer()
 
                 Button("Sign Up") {
-                    // TODO: sign up logic
+                    _ = posts.fetchPosts(token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkMzQ3OTFlMGU3ZWMyMzRjMzc2ZTdlIiwiaWF0IjoxNzA4NDMyNDcxLCJleHAiOjE3MDg0MzYwNzF9.5xJ3HbGQE-r132kjeAJuAiFeaUilbvfSFuneM2R4cYk")
+                    print(posts.postsList)
                 }
                 .accessibilityIdentifier("signUpButton")
                 
