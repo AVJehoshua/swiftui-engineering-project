@@ -14,6 +14,7 @@ struct SignUpView: View {
     @State private var username = ""
     @State private var email = ""
     @State private var password = ""
+    @State private var avatar = ""
     @State private var isSignedUp = false
     @State private var isValidInput = false
     
@@ -43,7 +44,7 @@ struct SignUpView: View {
                     }
                     
                     Button("Create an account") {
-                        let user = User(username: username, password: password, email: email)
+                        let user = User(username: username, password: password, email: email, avatar: avatar)
                         if signUp.isValidEmail(email: email) && signUp.isValidPassword(password: password) {
                             signUp.signUpUser(user: user)
                             isSignedUp = true
@@ -58,6 +59,7 @@ struct SignUpView: View {
                     .background(.blue)
                     .listRowBackground(Color.blue)
                 }
+                // code navigates to profile on sign up
                 NavigationLink(
                     destination: ProfilePageView(username: username),
                     isActive: $isSignedUp,

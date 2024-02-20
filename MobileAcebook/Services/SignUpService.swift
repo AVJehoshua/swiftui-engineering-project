@@ -1,16 +1,14 @@
 //
-//  SignUp.swift
+//  SignUpService.swift
 //  MobileAcebook
 //
-//  Created by AVJehoshua on 19/02/2024.
+//  Created by AVJehoshua on 20/02/2024.
 //
 
 import Foundation
 
 class SignUp {
     
-    
-
     let authService = AuthenticationService()
     
     func isValidEmail(email: String) -> Bool {
@@ -23,6 +21,7 @@ class SignUp {
         return emailPredicate.evaluate(with: email)
 }
     
+    
     func isValidPassword(password: String) -> Bool {
         let minLength = 8
         let containsUppercase = password.rangeOfCharacter(from: .uppercaseLetters) != nil
@@ -34,8 +33,6 @@ class SignUp {
             containsLowercase &&
             containsSpecialCharacter
     }
-    
-    
 
 
     func signUpUser(user: User) {
@@ -51,7 +48,6 @@ class SignUp {
                 }
         
         
-
         // if so, user can sign up
         authService.signUp(user: user) { success in
             if success {
@@ -64,7 +60,3 @@ class SignUp {
         }
     }
 }
-
-
-
-

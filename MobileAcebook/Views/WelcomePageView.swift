@@ -31,7 +31,7 @@ struct WelcomePageView: View {
                 Spacer()
 
                 Button("Sign Up") {
-                    signUp.signUpUser(user: User(username: "Test username", password: "Test password", email: "Test2@email.com"))
+                    signUp.signUpUser(user: User(username: "Test username", password: "Test password", email: "Test2@email.com", avatar:"/person.fill"))
                 }
                 .accessibilityIdentifier("signUpButton")
                 

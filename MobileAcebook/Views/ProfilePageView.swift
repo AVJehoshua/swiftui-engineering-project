@@ -23,7 +23,7 @@ struct ProfilePageView: View {
                         .foregroundStyle(.blue)
                     
                     
-                    Text("Welcome, \(username)")
+                    Text("Welcome, \(username)!")
                         .font(.title)
                         .fontWeight(.bold)
                 }
@@ -39,7 +39,7 @@ struct ProfilePageView: View {
 #if DEBUG
 struct ProfilePageView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePageView(username: "AVjehoshua")
+        ProfilePageView(username: "AVJehoshua")
     }
 }
 #endif
