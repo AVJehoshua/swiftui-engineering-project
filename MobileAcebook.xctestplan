@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "1FCF4BEA-D84C-4B99-9523-416227296E07",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MobileAcebook.xcodeproj",
+      "identifier" : "AE5D85AB2AC8A221009680C6",
+      "name" : "MobileAcebook"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MobileAcebook.xcodeproj",
+        "identifier" : "AE5D85BB2AC8A224009680C6",
+        "name" : "MobileAcebookTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MobileAcebook.xcodeproj",
+        "identifier" : "AE5D85C52AC8A224009680C6",
+        "name" : "MobileAcebookUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

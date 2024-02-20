@@ -5,7 +5,8 @@
 //  Created by Josué Estévez Fernández on 01/10/2023.
 //
 
-public struct User {
-    let username: String
+public struct User: Codable {
+    let username: String?
     let password: String
+    let email: String
 }
