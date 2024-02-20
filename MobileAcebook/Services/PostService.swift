@@ -59,3 +59,4 @@ class PostsViewModel: ObservableObject {
         return self.userDetails
     }
 }
+

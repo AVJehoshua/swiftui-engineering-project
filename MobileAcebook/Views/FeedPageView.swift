@@ -13,6 +13,8 @@ struct FeedPageView: View {
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
     
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkNGEwYTdhMTdhODVmZGNlZWFmNTA3IiwiaWF0IjoxNzA4NDQzMzQ4LCJleHAiOjE3MDg0NDY5NDh9.W95KpcrbnKtYEfVmyrlC1tGGVHbifBRGRuWHILLFgAc"
+    
     var body: some View {
         VStack{
         Text("Acebook").font(.title).frame(width: nil, height: nil).background(.red)
@@ -25,11 +27,8 @@ struct FeedPageView: View {
                 Text("No posts")
             }else {
                 List(Posts.postsList) {post in
-                    VStack(alignment: .leading){
-                        Text(post.message)
-                        Text("Comments: \(post.comments)")
-                    }
-                }
+                    PostView(post: post, postViewModel: Posts)
+                }.onAppear()
                 
             }
             Button("click"){
@@ -37,7 +36,7 @@ struct FeedPageView: View {
             }
         }
         .onAppear{
-            _ = Posts.fetchPosts(token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkNGEwYTdhMTdhODVmZGNlZWFmNTA3IiwiaWF0IjoxNzA4NDM5MzY4LCJleHAiOjE3MDg0NDI5Njh9.BkrBz4VAQyVlfGvNMda1FYbuCoqwC0X3OHipgN-kN7U")
+            _ = Posts.fetchPosts(token: token )
         }
     }
 }

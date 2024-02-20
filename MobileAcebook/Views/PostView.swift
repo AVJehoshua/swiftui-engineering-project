@@ -9,9 +9,13 @@ import SwiftUI
 
 struct PostView: View {
     let post: Post
+    let postViewModel: PostsViewModel
+    
+//    postViewModel.getUserDetails(userCreatedBy: post.createdBy, token: token )
     
     var body: some View{
         VStack(alignment: .leading){
+            
             Text(post.message)
             Text("Comments: \(post.comments)")
         }
