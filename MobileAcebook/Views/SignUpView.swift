@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct SignUpView: View {
     
     let signUp = SignUp()
@@ -19,7 +18,7 @@ struct SignUpView: View {
     @State private var isValidInput = false
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 Image("makers-logo")
                     .resizable()
@@ -27,14 +26,12 @@ struct SignUpView: View {
                     .frame(width: 200, height: 200)
                     .accessibilityIdentifier("makers-logo")
                 
-                
                 Form {
                     Section {
                         TextField("Username", text: $username)
                     }
                     
                     Section {
-                        
                         TextField("Email", text: $email)
                             .autocapitalization(.none)
                     }
@@ -46,37 +43,48 @@ struct SignUpView: View {
                     Button("Create an account") {
                         let user = User(username: username, password: password, email: email, avatar: avatar)
                         if signUp.isValidEmail(email: email) && signUp.isValidPassword(password: password) {
-                            signUp.signUpUser(user: user)
-                            isSignedUp = true
-                            print("User signed up successfully!")
+                            let signedUp = signUp.signUpUser(user: user)
+                            isSignedUp = signedUp
+                            print("signed up status:", isSignedUp)
+                            if isSignedUp {
+                                print("User signed up successfully!")
+                            } else {
+                                print("Error signing up!")
+                            }
                         } else {
                             print("Invalid user details!")
                         }
-                        //Code for creating an account
                     }
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(.blue)
                     .listRowBackground(Color.blue)
                 }
-                // code navigates to profile on sign up
-                NavigationLink(
-                    destination: ProfilePageView(username: username),
-                    isActive: $isSignedUp,
-                    label: { EmptyView() }
-                )
-
-//                .onAppear {
-//                    isValidInput = signUp.isValidEmail(email: email) && signUp.isValidPassword(password: password)
+                if isSignedUp == true {
+                    NavigationLink(
+                            destination: ProfilePageView(username: username),
+                            isActive: $isSignedUp) {
+                            EmptyView()
+                    }
+                    .hidden()
+            }
+//            if isSignedUp == true {
+//                NavigationLink(
+//                        destination: ProfilePageView(username: username),
+//                        isActive: $isSignedUp) {
+//                        EmptyView()
 //                }
+//                .hidden()
             }
         }
     }
 }
-#if DEBUG
-struct SignUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpView()
-    }
-}
-#endif
+
+
+
+
+
+
+//                .onAppear {
+//                    isValidInput = signUp.isValidEmail(email: email) && signUp.isValidPassword(password: password)
+//                }

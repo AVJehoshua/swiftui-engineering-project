@@ -35,28 +35,30 @@ class SignUp {
     }
 
 
-    func signUpUser(user: User) {
+    func signUpUser(user: User) -> Bool {
         // check if email is valid
         guard isValidEmail(email: user.email) else {
             print("Invalid email")
-            return
+            return false
         }
         // check if password is valid
         guard isValidPassword(password: user.password) else {
-                    print("Invalid password")
-                    return
+            print("Invalid password")
+            return false
                 }
         
-        
         // if so, user can sign up
+        var signedUp = false
         authService.signUp(user: user) { success in
-            if success {
+            if  success {
+                signedUp = true
+                print("user signup status:", signedUp)
                 print("Signup successful")
-                // Perform any additional actions after successful signup
+                
             } else {
                 print("Signup failed")
-                // Handle signup failure
             }
         }
+        return signedUp
     }
 }
