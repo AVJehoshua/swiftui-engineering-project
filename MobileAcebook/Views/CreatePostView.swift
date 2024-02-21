@@ -21,10 +21,12 @@ struct CreatePostView: View {
     
     var body: some View {
         
-        Form{
             HStack{
                 TextField("What's on your mind?", text: $newPost)
-                    .textFieldStyle(.roundedBorder)
+                    .padding(6)
+                    .background(.gray.opacity(0.1))
+                    .cornerRadius(10)
+
                 Button("Submit"){
                     if !newPost.isEmpty{
                         let result = mockCreatePostService(post: newPost, token: token)
@@ -37,8 +39,23 @@ struct CreatePostView: View {
                         }
                     }
                 }
+                
+// Haven't decided which way of writing button is better depending on how we want to style it.
+                
+//                Button(action: {
+//                    if !newPost.isEmpty{
+//                        let result = mockCreatePostService(post: newPost, token: token)
+//                        if result {
+//                            newPost = ""
+//                            print("New new created")
+//                        }else{
+//                            print("Couldn't create post")
+//                        }
+//                    }
+//                }, label: {
+//                    Text("Submit")
+//                })
             }
-        }
     }
 }
 

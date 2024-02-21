@@ -12,7 +12,7 @@ struct FeedPageView: View {
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
     
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkMzQ4MzcyNjJmYTQ0OGViZTY2ZmE2IiwiaWF0IjoxNzA4NTM5Mzc0LCJleHAiOjE3MDg1NDI5NzR9.JzkUp51iAIRtvHN_OzdbmTw9BtCtBNf2ssEGrFK1ECI"
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkMzQ4MzcyNjJmYTQ0OGViZTY2ZmE2IiwiaWF0IjoxNzA4NTQ5NzI2LCJleHAiOjE3MDg1NTMzMjZ9.AN1Z0GLSsh1VPqnNaVgGeF6VA2JSgSjcriyFrqcUysk"
     
     var body: some View {
         VStack(spacing:0){
@@ -23,11 +23,14 @@ struct FeedPageView: View {
                 .foregroundColor(.white)
             
 //            Spacer()
-        
-            // Comment
-            CreatePostView(token: token)        //.scrollContentBackground(.hidden)
-                .frame(maxHeight: 100)
-//                .background(.red)
+//            Form{
+            CreatePostView(token: token)
+//                .frame(maxWidth: 300, maxHeight: 80)
+                .padding(25)
+//            }
+//            .scrollContentBackground(.hidden)
+//            .frame(maxHeight: 100)
+//            .background(.red)
             
                 //All the posts in DB
                 //Gets back JSON object that has "posts" : [array of posts objects]
@@ -36,7 +39,9 @@ struct FeedPageView: View {
                 }else {
                     List(Posts.postsList) {post in
                         PostView(post: post, postViewModel: Posts, token: token)
-                    }.onAppear()
+                    }
+//                    .listStyle(PlainListStyle())
+                    .onAppear()
                 }
 
         }
