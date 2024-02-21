@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 extension Color {
     init(hex: String) {
         var cleanHexCode = hex.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -23,11 +24,6 @@ extension Color {
     }
 }
 
-struct WelcomePageView: View {
-    @State private var email = ""
-    @State private var password = ""
-    
-    var body: some View {
         NavigationView {
             ZStack {
                 VStack {
@@ -83,7 +79,6 @@ struct WelcomePageView: View {
         }
         
     }
-    
     
     
     struct WelcomePageView_Previews: PreviewProvider {
