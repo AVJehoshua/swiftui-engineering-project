@@ -42,14 +42,15 @@ struct SignUpView: View {
                     
                     Button("Create an account") {
                         let user = User(username: username, password: password, email: email, avatar: avatar)
-                        if signUp.isValidEmail(email: email) && signUp.isValidPassword(password: password) {
-                            let signedUp = signUp.signUpUser(user: user)
-                            isSignedUp = signedUp
-                            print("signed up status:", isSignedUp)
-                            if isSignedUp {
-                                print("User signed up successfully!")
-                            } else {
-                                print("Error signing up!")
+                        if signUp.isValidEmail(email: user.email) && signUp.isValidPassword(password: user.password) {
+                            signUp.signUpUser(user: user) { success in
+                                if success {
+                                    print("User signed up successfully!")
+                                    self.isSignedUp = true
+                                } else {
+                                    print("Error signing up!")
+                                    self.isSignedUp = false
+                                }
                             }
                         } else {
                             print("Invalid user details!")
@@ -60,21 +61,14 @@ struct SignUpView: View {
                     .background(.blue)
                     .listRowBackground(Color.blue)
                 }
-                if isSignedUp == true {
+                if isSignedUp {
                     NavigationLink(
                             destination: ProfilePageView(username: username),
                             isActive: $isSignedUp) {
                             EmptyView()
                     }
                     .hidden()
-            }
-//            if isSignedUp == true {
-//                NavigationLink(
-//                        destination: ProfilePageView(username: username),
-//                        isActive: $isSignedUp) {
-//                        EmptyView()
-//                }
-//                .hidden()
+                }
             }
         }
     }

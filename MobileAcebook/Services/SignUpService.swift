@@ -19,7 +19,7 @@ class SignUp {
         
         // Evaluate the predicate with the email string
         return emailPredicate.evaluate(with: email)
-}
+    }
     
     
     func isValidPassword(password: String) -> Bool {
@@ -29,36 +29,36 @@ class SignUp {
         let containsSpecialCharacter = password.rangeOfCharacter(from: .punctuationCharacters) != nil
         
         return password.count >= minLength &&
-            containsUppercase &&
-            containsLowercase &&
-            containsSpecialCharacter
+        containsUppercase &&
+        containsLowercase &&
+        containsSpecialCharacter
     }
-
-
-    func signUpUser(user: User) -> Bool {
-        // check if email is valid
+    
+    
+    func signUpUser(user: User, completion: @escaping (Bool) -> Void) {
+        // Check if email is valid
         guard isValidEmail(email: user.email) else {
             print("Invalid email")
-            return false
+            completion(false)
+            return
         }
         // check if password is valid
         guard isValidPassword(password: user.password) else {
             print("Invalid password")
-            return false
-                }
-        
+            completion(false)
+            return
+        }
         // if so, user can sign up
-        var signedUp = false
         authService.signUp(user: user) { success in
-            if  success {
-                signedUp = true
-                print("user signup status:", signedUp)
+            if success {
+                // If sign-up is successful, call the completion handler with true
                 print("Signup successful")
-                
+                completion(true)
             } else {
+                // If sign-up fails, call the completion handler with false
                 print("Signup failed")
+                completion(false)
             }
         }
-        return signedUp
     }
 }

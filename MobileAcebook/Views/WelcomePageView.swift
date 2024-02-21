@@ -31,8 +31,17 @@ struct WelcomePageView: View {
                 Spacer()
 
                 Button("Sign Up") {
-                    signUp.signUpUser(user: User(username: "Test username", password: "Test password", email: "Test2@email.com", avatar:"/person.fill"))
+                signUp.signUpUser(user: User(username: "Test username", password: "Test password", email: "Test2@email.com", avatar:"/person.fill")) { success in
+                    if success {
+                        // Handle successful signup
+                        print("User signed up successfully!")
+                    } else {
+                        // Handle signup failure
+                        print("Error signing up!")
+                    }
                 }
+            }
+
                 .accessibilityIdentifier("signUpButton")
                 
                 Spacer()
