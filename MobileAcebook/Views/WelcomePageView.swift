@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let signUp = SignUp()
+
 struct WelcomePageView: View {
     
     let posts = PostsViewModel()
@@ -32,12 +34,12 @@ struct WelcomePageView: View {
                 Spacer()
 
                 Button("Sign Up") {
-                    _ = posts.fetchPosts(token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkMzQ3OTFlMGU3ZWMyMzRjMzc2ZTdlIiwiaWF0IjoxNzA4NDMyNDcxLCJleHAiOjE3MDg0MzYwNzF9.5xJ3HbGQE-r132kjeAJuAiFeaUilbvfSFuneM2R4cYk")
-                    print(posts.postsList)
+                    signUp.signUpUser(user: User(username: "Test username", password: "Test password", email: "Test2@email.com"))
                 }
                 .accessibilityIdentifier("signUpButton")
                 
                 Spacer()
+                
             }
         }
     }
