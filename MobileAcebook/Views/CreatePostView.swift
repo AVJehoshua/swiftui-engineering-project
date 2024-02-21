@@ -9,11 +9,10 @@ import SwiftUI
 
 func mockCreatePostService(post: String, token: String)-> Bool{
     let result: Bool = true
-    print(token)
-    print(post)
+//    print(token)
+//    print(post)
     return result
 }
-
 
 
 struct CreatePostView: View {
@@ -25,6 +24,7 @@ struct CreatePostView: View {
         Form{
             HStack{
                 TextField("What's on your mind?", text: $newPost)
+                    .textFieldStyle(.roundedBorder)
                 Button("Submit"){
                     if !newPost.isEmpty{
                         let result = mockCreatePostService(post: newPost, token: token)

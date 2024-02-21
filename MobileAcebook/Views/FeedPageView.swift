@@ -25,20 +25,19 @@ struct FeedPageView: View {
 //            Spacer()
         
             // Comment
-            CreatePostView(token: token)        /*.scrollContentBackground(.hidden)*/
+            CreatePostView(token: token)        //.scrollContentBackground(.hidden)
                 .frame(maxHeight: 100)
 //                .background(.red)
             
-            //All the posts in DB
-            //Gets back JSON object that has "posts" : [array of posts objects]
-            if Posts.postsList.isEmpty {
-                Text("No posts")
-            }else {
-                List(Posts.postsList) {post in
-                    PostView(post: post, postViewModel: Posts, token: token)
-                }.onAppear()
-                
-            }
+                //All the posts in DB
+                //Gets back JSON object that has "posts" : [array of posts objects]
+                if Posts.postsList.isEmpty {
+                    Text("No posts")
+                }else {
+                    List(Posts.postsList) {post in
+                        PostView(post: post, postViewModel: Posts, token: token)
+                    }.onAppear()
+                }
 
         }
         .onAppear{
