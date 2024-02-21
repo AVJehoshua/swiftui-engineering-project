@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FeedPageView: View {
 //    @ObservedObject var viewModel = PostModel()
-
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
     
@@ -26,7 +25,7 @@ struct FeedPageView: View {
             Spacer()
         
             // Comment
-            Text("Create New Post")
+            CreatePostView(token: token)
             //All the posts in DB
             //Gets back JSON object that has "posts" : [array of posts objects]
             if Posts.postsList.isEmpty {

@@ -7,20 +7,36 @@
 
 import SwiftUI
 
+func mockCreatePostService(post: String, token: String)-> Bool{
+    let result: Bool = true
+    print(token)
+    print(post)
+    return result
+}
+
+
+
 struct CreatePostView: View {
     @State private var newPost = ""
+    var token: String
     
     var body: some View {
-        HStack{
+        
             Form{
-                TextField("What's on your mind?", text: $newPost)
+                HStack{
+                    TextField("What's on your mind?", text: $newPost)
+                    Button("Submit"){
+                        let result = mockCreatePostService(post: newPost, token: token)
+                        newPost = ""
+                        print(result)
+                    }
+                }
             }
             
-        }
     }
 }
 
 
 #Preview {
-    CreatePostView()
+    CreatePostView(token: "Test Token")
 }
