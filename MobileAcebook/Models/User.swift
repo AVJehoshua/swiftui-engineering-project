@@ -12,4 +12,6 @@ public struct User: Codable {
     let avatar: String?
 }
 
-
+struct UserWrapper: Codable {
+    let ownerData: User
+}
