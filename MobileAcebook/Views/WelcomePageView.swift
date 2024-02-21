@@ -76,15 +76,14 @@ struct WelcomePageView: View {
                     .buttonStyle(.borderedProminent)
                     .tint(Color(hex: "#3468C0"))
                     .accessibilityIdentifier("signUpButton")
-                    
+                   
                 }
-                
+               
             }
         }
         
     }
-    
-    
+   
     
     struct WelcomePageView_Previews: PreviewProvider {
         static var previews: some View {
