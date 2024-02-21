@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		40A236BE2B84CC910088F49C /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A236BD2B84CC910088F49C /* LoginService.swift */; };
-		40A236C02B84CFD10088F49C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A236BF2B84CFD10088F49C /* TestView.swift */; };
 		5B8601C82B83BAB500BF982E /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8601C72B83BAB500BF982E /* SignUp.swift */; };
 		AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */; };
 		AE5D85B42AC8A224009680C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE5D85B32AC8A224009680C6 /* Assets.xcassets */; };
@@ -24,10 +23,10 @@
 		AE5D85E82AC9B29A009680C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85E72AC9B29A009680C6 /* User.swift */; };
 		D32326F82B84D39100C3E23B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32326F72B84D39100C3E23B /* Post.swift */; };
 		D32326FA2B84D39B00C3E23B /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32326F92B84D39B00C3E23B /* PostService.swift */; };
+		D3AEDD7A2B83BD7300D14E29 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEDD792B83BD7300D14E29 /* SignUpView.swift */; };
 		EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */; };
 		EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB42B84DF5F00DBD927 /* MockPostService.swift */; };
 		EA682AB72B84E45400DBD927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB62B84E45400DBD927 /* PostView.swift */; };
-		D3AEDD7A2B83BD7300D14E29 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEDD792B83BD7300D14E29 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +48,6 @@
 
 /* Begin PBXFileReference section */
 		40A236BD2B84CC910088F49C /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		40A236BF2B84CFD10088F49C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		5B8601C62B83A93700BF982E /* MobileAcebook.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MobileAcebook.xctestplan; sourceTree = "<group>"; };
 		5B8601C72B83BAB500BF982E /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		AE5D85AC2AC8A221009680C6 /* MobileAcebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAcebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,10 +67,10 @@
 		AE5D85E72AC9B29A009680C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D32326F72B84D39100C3E23B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D32326F92B84D39B00C3E23B /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		D3AEDD792B83BD7300D14E29 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
 		EA682AB42B84DF5F00DBD927 /* MockPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostService.swift; sourceTree = "<group>"; };
 		EA682AB62B84E45400DBD927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
-		D3AEDD792B83BD7300D14E29 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,15 +98,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4029DEDB2B84BCF30059B3B9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				AE5D85D92AC8A337009680C6 /* WelcomePageView.swift */,
-				40A236BF2B84CFD10088F49C /* TestView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		AE5D85A32AC8A221009680C6 = {
 			isa = PBXGroup;
 			children = (
@@ -133,18 +122,10 @@
 		AE5D85AE2AC8A221009680C6 /* MobileAcebook */ = {
 			isa = PBXGroup;
 			children = (
-      
-        4029DEDB2B84BCF30059B3B9 /* Views */,
-				AE5D85E42AC9B060009680C6 /* Protocols */,
-				AE5D85DF2AC9AF83009680C6 /* Models */,
-				AE5D85DD2AC9AF72009680C6 /* Services */,
-				AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */,
-
 				AE5D85B32AC8A224009680C6 /* Assets.xcassets */,
 				AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */,
 				AE5D85DF2AC9AF83009680C6 /* Models */,
 				AE5D85B52AC8A224009680C6 /* Preview Content */,
-
 				AE5D85E42AC9B060009680C6 /* Protocols */,
 				AE5D85DD2AC9AF72009680C6 /* Services */,
 				D3AEDD782B83B19900D14E29 /* Views */,
@@ -357,7 +338,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A236C02B84CFD10088F49C /* TestView.swift in Sources */,
 				AE5D85E12AC9AFA9009680C6 /* AuthenticationService.swift in Sources */,
 				40A236BE2B84CC910088F49C /* LoginService.swift in Sources */,
 				EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */,
