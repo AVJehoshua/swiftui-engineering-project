@@ -9,7 +9,7 @@ import Foundation
 
 class PostsViewModel: ObservableObject {
     @Published var postsList: [Post] = []
-    @Published var userDetails: User = User(username: "", password: "", email: "")
+    @Published var userDetails: User = User(username: "", password: "", email: "", avatar: "")
     
     func findPost(byID id: String) -> Post? {
         return postsList.first(where: { $0.id == id })
