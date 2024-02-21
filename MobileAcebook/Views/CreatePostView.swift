@@ -22,17 +22,16 @@ struct CreatePostView: View {
     
     var body: some View {
         
-            Form{
-                HStack{
-                    TextField("What's on your mind?", text: $newPost)
-                    Button("Submit"){
-                        let result = mockCreatePostService(post: newPost, token: token)
-                        newPost = ""
-                        print(result)
-                    }
+        Form{
+            HStack{
+                TextField("What's on your mind?", text: $newPost)
+                Button("Submit"){
+                    let result = mockCreatePostService(post: newPost, token: token)
+                    newPost = ""
+                    print(result)
                 }
             }
-            
+        }
     }
 }
 
