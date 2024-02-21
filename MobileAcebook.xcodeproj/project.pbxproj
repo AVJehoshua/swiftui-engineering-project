@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5BD27EC2B83BEC10029C7F5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD27EB2B83BEC10029C7F5 /* LoginService.swift */; };
+		40A236BE2B84CC910088F49C /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A236BD2B84CC910088F49C /* LoginService.swift */; };
+		40A236C02B84CFD10088F49C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A236BF2B84CFD10088F49C /* TestView.swift */; };
+		40A236C82B84EFFF0088F49C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A236C72B84EFFF0088F49C /* ProfileView.swift */; };
+		40A236CB2B84F02F0088F49C /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A236CA2B84F02F0088F49C /* FeedView.swift */; };
 		5B8601C82B83BAB500BF982E /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8601C72B83BAB500BF982E /* SignUp.swift */; };
 		AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */; };
 		AE5D85B42AC8A224009680C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE5D85B32AC8A224009680C6 /* Assets.xcassets */; };
@@ -42,7 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A5BD27EB2B83BEC10029C7F5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		40A236BD2B84CC910088F49C /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		40A236BF2B84CFD10088F49C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		40A236C72B84EFFF0088F49C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		40A236CA2B84F02F0088F49C /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		5B8601C62B83A93700BF982E /* MobileAcebook.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MobileAcebook.xctestplan; sourceTree = "<group>"; };
 		5B8601C72B83BAB500BF982E /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		AE5D85AC2AC8A221009680C6 /* MobileAcebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAcebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4029DEDB2B84BCF30059B3B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40A236BF2B84CFD10088F49C /* TestView.swift */,
+				40A236C72B84EFFF0088F49C /* ProfileView.swift */,
+				40A236CA2B84F02F0088F49C /* FeedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AE5D85A32AC8A221009680C6 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +128,7 @@
 		AE5D85AE2AC8A221009680C6 /* MobileAcebook */ = {
 			isa = PBXGroup;
 			children = (
+				4029DEDB2B84BCF30059B3B9 /* Views */,
 				AE5D85B32AC8A224009680C6 /* Assets.xcassets */,
 				AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */,
 				AE5D85DF2AC9AF83009680C6 /* Models */,
@@ -155,7 +172,7 @@
 			children = (
 				5B8601C72B83BAB500BF982E /* SignUp.swift */,
 				AE5D85E02AC9AFA9009680C6 /* AuthenticationService.swift */,
-				A5BD27EB2B83BEC10029C7F5 /* LoginService.swift */,
+				40A236BD2B84CC910088F49C /* LoginService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -323,8 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40A236C82B84EFFF0088F49C /* ProfileView.swift in Sources */,
+				40A236CB2B84F02F0088F49C /* FeedView.swift in Sources */,
+				40A236C02B84CFD10088F49C /* TestView.swift in Sources */,
 				AE5D85E12AC9AFA9009680C6 /* AuthenticationService.swift in Sources */,
-				A5BD27EC2B83BEC10029C7F5 /* LoginService.swift in Sources */,
+				40A236BE2B84CC910088F49C /* LoginService.swift in Sources */,
 				5B8601C82B83BAB500BF982E /* SignUp.swift in Sources */,
 				AE5D85E62AC9B077009680C6 /* AuthenticationServiceProtocol.swift in Sources */,
 				AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */,
