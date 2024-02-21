@@ -7,11 +7,20 @@
 
 import SwiftUI
 
+var token = ""
+
 @main
 struct MobileAcebookApp: App {
+    @State private var isLoggedIn = false
     var body: some Scene {
         WindowGroup {
-            WelcomePageView()
+            NavigationView {
+                if isLoggedIn {
+                    TestView()
+                } else {
+                    WelcomePageView(isLoggedIn: $isLoggedIn)
+                }
+            }
         }
     }
 }
