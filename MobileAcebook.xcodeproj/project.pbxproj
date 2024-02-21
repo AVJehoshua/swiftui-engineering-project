@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40355F642B8634B80036475B /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40355F632B8634B80036475B /* TabView.swift */; };
 		40A236BE2B84CC910088F49C /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A236BD2B84CC910088F49C /* LoginService.swift */; };
 		5B8601C82B83BAB500BF982E /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8601C72B83BAB500BF982E /* SignUp.swift */; };
 		AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40355F632B8634B80036475B /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		40A236BD2B84CC910088F49C /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		5B8601C62B83A93700BF982E /* MobileAcebook.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MobileAcebook.xctestplan; sourceTree = "<group>"; };
 		5B8601C72B83BAB500BF982E /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */,
 				EA682AB62B84E45400DBD927 /* PostView.swift */,
 				D3AEDD792B83BD7300D14E29 /* SignUpView.swift */,
+				40355F632B8634B80036475B /* TabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				40A236BE2B84CC910088F49C /* LoginService.swift in Sources */,
 				EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */,
 				EA682AB72B84E45400DBD927 /* PostView.swift in Sources */,
+				40355F642B8634B80036475B /* TabView.swift in Sources */,
 				EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */,
 				5B8601C82B83BAB500BF982E /* SignUp.swift in Sources */,
 				AE5D85E62AC9B077009680C6 /* AuthenticationServiceProtocol.swift in Sources */,
