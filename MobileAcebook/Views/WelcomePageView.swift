@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let signUp = SignUp()
+
 extension Color {
     init(hex: String) {
         var cleanHexCode = hex.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -83,19 +85,31 @@ struct WelcomePageView: View {
                     .buttonStyle(.borderedProminent)
                     .tint(Color(hex: "#3468C0"))
                     .accessibilityIdentifier("signUpButton")
-                   
+                    
+                    
+//                    Button("Sign Up") {
+//                        signUp.signUpUser(user: User(username: "Test username", password: "Test password", email: "Test2@email.com", avatar:"/person.fill")) { success in
+//                            if success {
+//                                // Handle successful signup
+//                                print("User signed up successfully!")
+//                            } else {
+//                                // Handle signup failure
+//                                print("Error signing up!")
+//                            }
+//                        }
+//                    }
+                    
+                    .accessibilityIdentifier("signUpButton")
+                    
+                    Spacer()
+                    
                 }
-               
             }
         }
-        
     }
-   
-    
-//    struct WelcomePageView_Previews: PreviewProvider {
-//        static var previews: some View {
-//            WelcomePageView()
-//        }
-//
-//    }
+    struct WelcomePageView_Previews: PreviewProvider {
+        static var previews: some View {
+            WelcomePageView()
+        }
+    }
 }
