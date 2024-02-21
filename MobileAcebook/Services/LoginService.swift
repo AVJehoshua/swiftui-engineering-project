@@ -15,8 +15,7 @@ struct UserData: Codable {
 }
 
 class LoginService {
-    func login(_ user: UserData) -> Bool {
-        @State var token = ""
+    func login(_ user: UserData, completion: @escaping (Bool) -> Void) -> Bool {
         
         let url = URL(string: "http://127.0.0.1:8080/tokens")!
         var request = URLRequest(url: url)
@@ -38,17 +37,20 @@ class LoginService {
 //              This translates the Json data to a dictionary
                 guard let jsonToken = try? JSONSerialization.jsonObject(with: tokenData, options: []) as? [String: Any],
 //                    the value for token is extracted from the dictionary by using the token key
-                      let token = jsonToken["token"] as? String else {
+                      let tokenValue = jsonToken["token"] as? String else {
                     print("Unable to decode token data from JSON or no token data received")
                     return }
-                
+                token = tokenValue
                 if statusCode == 201 {
                     print("OK: \(statusCode)")
+                    completion(true)
                 } else {
                     print("FAILURE: \(statusCode)")
+                    completion(false)
                 }
             } catch {
                 print("Failed to Send POST Request \(error)")
+                completion(false)
             }
         }
         return true
