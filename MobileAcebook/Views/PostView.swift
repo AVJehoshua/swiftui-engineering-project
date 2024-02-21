@@ -23,7 +23,7 @@ struct PostView: View {
             
         }
         .onAppear{
-            _ = postViewModel.getUserDetails(userCreatedBy: post.createdBy, token: token, post_id: post.id )
+            _ = postViewModel.getUserDetails(userCreatedBy: post.createdBy, post_id: post.id )
         }
     }
     
