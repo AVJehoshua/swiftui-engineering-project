@@ -90,5 +90,6 @@ struct WelcomePageView: View {
         static var previews: some View {
             WelcomePageView()
         }
+
     }
 }

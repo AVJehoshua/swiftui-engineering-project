@@ -117,13 +117,21 @@
 		AE5D85AE2AC8A221009680C6 /* MobileAcebook */ = {
 			isa = PBXGroup;
 			children = (
-				4029DEDB2B84BCF30059B3B9 /* Views */,
+      
+        4029DEDB2B84BCF30059B3B9 /* Views */,
 				AE5D85E42AC9B060009680C6 /* Protocols */,
 				AE5D85DF2AC9AF83009680C6 /* Models */,
 				AE5D85DD2AC9AF72009680C6 /* Services */,
 				AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */,
+
 				AE5D85B32AC8A224009680C6 /* Assets.xcassets */,
+				AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */,
+				AE5D85DF2AC9AF83009680C6 /* Models */,
 				AE5D85B52AC8A224009680C6 /* Preview Content */,
+
+				AE5D85E42AC9B060009680C6 /* Protocols */,
+				AE5D85DD2AC9AF72009680C6 /* Services */,
+				D3AEDD782B83B19900D14E29 /* Views */,
 			);
 			path = MobileAcebook;
 			sourceTree = "<group>";
@@ -186,6 +194,14 @@
 				AE5D85E52AC9B077009680C6 /* AuthenticationServiceProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D3AEDD782B83B19900D14E29 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE5D85D92AC8A337009680C6 /* WelcomePageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
