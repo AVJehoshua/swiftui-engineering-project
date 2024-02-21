@@ -10,3 +10,7 @@ public struct User: Codable {
     let password: String
     let email: String
 }
+
+struct UserWrapper: Codable {
+    let ownerData: User
+}

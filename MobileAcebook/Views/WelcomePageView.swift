@@ -10,6 +10,9 @@ import SwiftUI
 let signUp = SignUp()
 
 struct WelcomePageView: View {
+    
+    let posts = PostsViewModel()
+    
     var body: some View {
         ZStack {
             VStack {
