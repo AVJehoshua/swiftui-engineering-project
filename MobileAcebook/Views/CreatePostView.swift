@@ -27,8 +27,12 @@ struct CreatePostView: View {
                 TextField("What's on your mind?", text: $newPost)
                 Button("Submit"){
                     let result = mockCreatePostService(post: newPost, token: token)
-                    newPost = ""
-                    print(result)
+                    if result{
+                        newPost = ""
+                        print("New post created")
+                    }else{
+                        print("Couldn't create post")
+                    }
                 }
             }
         }
