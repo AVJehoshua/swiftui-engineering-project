@@ -11,6 +11,10 @@ class PostsViewModel: ObservableObject {
     @Published var postsList: [Post] = []
     @Published var userDetails: User = User(username: "", password: "")
     
+    func findPost(byID id: String) -> Post? {
+        return postsList.first(where: { $0.id == id })
+    }
+    
     func fetchPosts(token: String) -> String{
         let url = URL(string: "http://127.0.0.1:8080/posts")!
         
@@ -35,9 +39,10 @@ class PostsViewModel: ObservableObject {
         return ""
     }
     
-    func getUserDetails(userCreatedBy: String, token: String) -> User {
+    func getUserDetails(userCreatedBy: String, token: String, post_id: String) -> User {
         let url = URL(string: "http://127.0.0.1:8080/posts/\(userCreatedBy)")!
 
+        var postToUpdate = findPost(byID: post_id)!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -50,11 +55,19 @@ class PostsViewModel: ObservableObject {
                 let response = try JSONDecoder().decode(UserWrapper.self, from: data)
                 DispatchQueue.main.async {
                     self.userDetails = response.ownerData
+                    postToUpdate.username = self.userDetails.username
+                    if let index = self.postsList.firstIndex(where: { $0.id == post_id }) {
+                        self.postsList[index] = postToUpdate
+                    }
                 }
             } catch {
                 print("Error decoding posts: \(error)")
             }
         }.resume()
+        
+    
+        
+        print(self.userDetails.username)
         
         return self.userDetails
     }

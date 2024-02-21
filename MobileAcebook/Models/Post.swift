@@ -14,6 +14,7 @@ struct Post: Codable, Identifiable {
     let createdAt: String
     let comments: Int
     let likes: [String]
+    var username: String? 
     
     private enum CodingKeys: String, CodingKey {
         case id = "_id"

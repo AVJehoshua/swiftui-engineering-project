@@ -13,27 +13,31 @@ struct FeedPageView: View {
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
     
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkNGEwYTdhMTdhODVmZGNlZWFmNTA3IiwiaWF0IjoxNzA4NDQzMzQ4LCJleHAiOjE3MDg0NDY5NDh9.W95KpcrbnKtYEfVmyrlC1tGGVHbifBRGRuWHILLFgAc"
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkNDhmYmJlMGU3ZWMyMzRjMzc2ZTgxIiwiaWF0IjoxNzA4NTExMDMyLCJleHAiOjE3MDg1MTQ2MzJ9.Pwu86XR28vdhyaH_KjkakaVw5dSA47OAXWYe43T6Erg"
     
     var body: some View {
         VStack{
-        Text("Acebook").font(.title).frame(width: nil, height: nil).background(.red)
+            Text("Acebook")
+                .font(.title)
+                .frame(maxWidth: .infinity)
+                .background(.blue)
+                .foregroundColor(.white)
+            
+            Spacer()
         
-        // Comment
-                Text("Create New Post")
-        //All the posts in DB
-        //Gets back JSON object that has "posts" : [array of posts objects]
+            // Comment
+            Text("Create New Post")
+            //All the posts in DB
+            //Gets back JSON object that has "posts" : [array of posts objects]
             if Posts.postsList.isEmpty {
                 Text("No posts")
             }else {
                 List(Posts.postsList) {post in
-                    PostView(post: post, postViewModel: Posts)
+                    PostView(post: post, postViewModel: Posts, token: token)
                 }.onAppear()
                 
             }
-            Button("click"){
-                print(Posts.postsList)
-            }
+
         }
         .onAppear{
             _ = Posts.fetchPosts(token: token )

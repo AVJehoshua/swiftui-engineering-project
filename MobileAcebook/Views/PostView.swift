@@ -9,17 +9,24 @@ import SwiftUI
 
 struct PostView: View {
     let post: Post
-    let postViewModel: PostsViewModel
-    
-//    postViewModel.getUserDetails(userCreatedBy: post.createdBy, token: token )
+    @ObservedObject var postViewModel: PostsViewModel
+    let token: String
     
     var body: some View{
         VStack(alignment: .leading){
             
+            Text(post.username ?? "loading...")
+            Text(post.formattedCreatedAt)
+                .foregroundStyle(Color.gray)
             Text(post.message)
             Text("Comments: \(post.comments)")
+            
+        }
+        .onAppear{
+            _ = postViewModel.getUserDetails(userCreatedBy: post.createdBy, token: token, post_id: post.id )
         }
     }
+    
 }
 
 //#Preview {
