@@ -26,12 +26,15 @@ struct CreatePostView: View {
             HStack{
                 TextField("What's on your mind?", text: $newPost)
                 Button("Submit"){
-                    let result = mockCreatePostService(post: newPost, token: token)
-                    if result{
-                        newPost = ""
-                        print("New post created")
-                    }else{
-                        print("Couldn't create post")
+                    if !newPost.isEmpty{
+                        let result = mockCreatePostService(post: newPost, token: token)
+                        
+                        if result{
+                            newPost = ""
+                            print("New post created")
+                        }else{
+                            print("Couldn't create post")
+                        }
                     }
                 }
             }
