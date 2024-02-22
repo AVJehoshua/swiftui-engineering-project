@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ProfilePageView: View {
-//    @State var isLoggedIn: Bool
+    @State var isLoggedIn: Bool
     var username: String
     
     var body: some View {
         NavigationView {
             VStack(alignment: .trailing, spacing: 20) {
                 Button("Logout") {
-//                    isLoggedIn = false
+                    isLoggedIn = false
                 }
                 
-                HStack(spacing: 20)
+                HStack(spacing: 25)
                 {
 //                    Image(systemName: "person.crop.circle.fill")
 //                        .resizable()
@@ -33,7 +33,7 @@ struct ProfilePageView: View {
                         .fontWeight(.bold)
                     
                     ImageUploadView()
-                               
+                    
                     Spacer()
                 }
                 
@@ -45,10 +45,10 @@ struct ProfilePageView: View {
     }
 }
 
-#if DEBUG
-struct ProfilePageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfilePageView(username: "AVJehoshua")
-    }
-}
-#endif
+//#if DEBUG
+//struct ProfilePageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfilePageView(username: "AVJehoshua")
+//    }
+//}
+//#endif

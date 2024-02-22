@@ -63,7 +63,7 @@ struct SignUpView: View {
                 }
                 if isSignedUp {
                     NavigationLink(
-                            destination: ProfilePageView(username: username),
+                        destination: ProfilePageView(isLoggedIn: true, username: username),
                             isActive: $isSignedUp) {
                             EmptyView()
                     }

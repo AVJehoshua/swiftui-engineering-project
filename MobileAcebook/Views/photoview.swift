@@ -23,7 +23,7 @@ struct ImageUploadView: View {
                         Circle()
                         .stroke(Color.white)
                     )
-                    .frame(width: 160, height: 160)
+                    .frame(width: 160, height: 95)
 
                     .onTapGesture {
                             selectedImage = nil
@@ -36,18 +36,15 @@ struct ImageUploadView: View {
                               }
                           }
             } else {
-                Image(systemName: "person.crop.circle.fill")
+                Image("avatar")
+                .resizable()
                 .scaledToFit()
-                .frame(width: 125, height: 160)
-                .symbolRenderingMode(.hierarchical)
-//                .symbolRenderingMode(.hierarchical)
-//                .foregroundStyle(.blue)
-//                .clipShape(Circle())
-//                .overlay(
-//                    Circle()
-//                    .stroke(Color.white, lineWidth: 4)
-//                )
-                .frame(width: 125, height: 160)
+                .clipShape(Circle())
+                .overlay(
+                    Circle()
+                    .stroke(Color.white)
+                )
+                .frame(width: 160, height: 95)
                 .onTapGesture {
                             isShowingImagePicker = true
                                         }
