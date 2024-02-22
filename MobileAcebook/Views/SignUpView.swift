@@ -10,12 +10,13 @@ struct SignUpView: View {
     
     let signUp = SignUp()
     
-    @State private var username = ""
+    @State public var username = ""
     @State private var email = ""
     @State private var password = ""
     @State private var avatar = ""
     @State private var isSignedUp = false
     @State private var isValidInput = false
+    @Binding var isLoggedIn: Bool
     
     var body: some View {
         NavigationView {
@@ -46,7 +47,17 @@ struct SignUpView: View {
                             signUp.signUpUser(user: user) { success in
                                 if success {
                                     print("User signed up successfully!")
-                                    self.isSignedUp = true
+                                    let service = LoginService()
+                                    let user = UserData(email: email, password: password)
+                                    _ = service.login(user){ success in
+                                        if success {
+                                            email = ""
+                                            password = ""
+                                            isLoggedIn = true
+                                        } else {
+                                            print("Error logging in")
+                                        }
+                                    }
                                 } else {
                                     print("Error signing up!")
                                     self.isSignedUp = false

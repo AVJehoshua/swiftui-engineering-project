@@ -32,6 +32,8 @@
 		EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */; };
 		EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB42B84DF5F00DBD927 /* MockPostService.swift */; };
 		EA682AB72B84E45400DBD927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB62B84E45400DBD927 /* PostView.swift */; };
+		EAFE18802B8646DA00A7B71A /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE187F2B8646DA00A7B71A /* CreatePostView.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,7 @@
 		EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
 		EA682AB42B84DF5F00DBD927 /* MockPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostService.swift; sourceTree = "<group>"; };
 		EA682AB62B84E45400DBD927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		EAFE187F2B8646DA00A7B71A /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
+		4029DEDB2B84BCF30059B3B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40A236BF2B84CFD10088F49C /* TestView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+
 		AE5D85A32AC8A221009680C6 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 		AE5D85AE2AC8A221009680C6 /* MobileAcebook */ = {
 			isa = PBXGroup;
 			children = (
+				4029DEDB2B84BCF30059B3B9 /* Views */,
 				AE5D85B32AC8A224009680C6 /* Assets.xcassets */,
 				AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */,
 				AE5D85DF2AC9AF83009680C6 /* Models */,
@@ -214,6 +228,7 @@
 				EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */,
 				EA682AB62B84E45400DBD927 /* PostView.swift */,
 				D3AEDD792B83BD7300D14E29 /* SignUpView.swift */,
+				EAFE187F2B8646DA00A7B71A /* CreatePostView.swift */,
 				40355F632B8634B80036475B /* TabView.swift */,
 				5BB4F2512B84D4F6004D949D /* ProfilePageView.swift */,
 				A5BD27F72B87690C0029C7F5 /* photoview.swift */,
@@ -355,6 +370,7 @@
 				40A236BE2B84CC910088F49C /* LoginService.swift in Sources */,
 				EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */,
 				EA682AB72B84E45400DBD927 /* PostView.swift in Sources */,
+				EAFE18802B8646DA00A7B71A /* CreatePostView.swift in Sources */,
 				40355F642B8634B80036475B /* TabView.swift in Sources */,
 				EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */,
 				5B8601C82B83BAB500BF982E /* (null) in Sources */,

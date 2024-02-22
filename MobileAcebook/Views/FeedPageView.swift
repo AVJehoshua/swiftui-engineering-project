@@ -9,32 +9,40 @@ import SwiftUI
 
 struct FeedPageView: View {
 //    @ObservedObject var viewModel = PostModel()
-
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
     
+    let token = "Needs a token"
+  
     var body: some View {
-        VStack{
+        VStack(spacing:0){
             Text("Acebook")
                 .font(.title)
                 .frame(maxWidth: .infinity)
                 .background(.blue)
                 .foregroundColor(.white)
             
-            Spacer()
-        
-            // Comment
-            Text("Create New Post")
-            //All the posts in DB
-            //Gets back JSON object that has "posts" : [array of posts objects]
-            if Posts.postsList.isEmpty {
-                Text("No posts")
-            }else {
-                List(Posts.postsList) {post in
-                    PostView(post: post, postViewModel: Posts, token: token)
-                }.onAppear()
-                
-            }
+//            Spacer()
+//            Form{
+            CreatePostView(token: token)
+//                .frame(maxWidth: 300, maxHeight: 80)
+                .padding(25)
+//            }
+//            .scrollContentBackground(.hidden)
+//            .frame(maxHeight: 100)
+//            .background(.red)
+            
+                //All the posts in DB
+                //Gets back JSON object that has "posts" : [array of posts objects]
+                if Posts.postsList.isEmpty {
+                    Text("No posts")
+                }else {
+                    List(Posts.postsList) {post in
+                        PostView(post: post, postViewModel: Posts, token: token)
+                    }
+//                    .listStyle(PlainListStyle())
+                    .onAppear()
+                }
 
         }
         .onAppear{
