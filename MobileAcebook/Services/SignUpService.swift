@@ -49,6 +49,7 @@ class SignUp {
             return
         }
         // if so, user can sign up
+        username = user.username!
         authService.signUp(user: user) { success in
             if success {
                 // If sign-up is successful, call the completion handler with true
