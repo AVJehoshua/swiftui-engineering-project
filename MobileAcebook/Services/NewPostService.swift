@@ -1,31 +1,29 @@
 //
-//  LoginService.swift
+//  NewPostService.swift
 //  MobileAcebook
 //
-//  Created by Ilhan Abdalle on 19/02/2024.
+//  Created by Ilhan Abdalle on 21/02/2024.
 //
 
-import UIKit
-import SwiftUI
+import Foundation
 
-struct UserData: Codable {
-
-    let email: String
-    let password: String
+struct NewPost: Codable {
+    let message: String
 }
 
-class LoginService {
-    func login(_ user: UserData, completion: @escaping (Bool) -> Void) -> Bool {
+class CreatePost {
+    func createPost(newPost: NewPost) -> Bool {
         
-        let url = URL(string: "http://127.0.0.1:8080/tokens")!
+        let url = URL(string: "http://127.0.0.1:8080/posts")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
-        let data = try! JSONEncoder().encode(user)
+        let data = try! JSONEncoder().encode(newPost)
         request.httpBody = data
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-//      request has been copied here as it flagged an error for using the same variable name in an async func
+        //      request has been copied here as it flagged an error for using the same variable name in an async func
         let requestData = request
         
         Task {
@@ -33,26 +31,22 @@ class LoginService {
                 let (tokenData, response) = try await URLSession.shared.data(for: requestData)
                 let statusCode = (response as! HTTPURLResponse).statusCode
                 
-//              tokenData is returned an JSON object and the following code block extracts the token value
-//              This translates the Json data to a dictionary
                 guard let jsonToken = try? JSONSerialization.jsonObject(with: tokenData, options: []) as? [String: Any],
-//                    the value for token is extracted from the dictionary by using the token key
                       let tokenValue = jsonToken["token"] as? String else {
                     print("Unable to decode token data from JSON or no token data received")
                     return }
+                
                 token = tokenValue
                 if statusCode == 201 {
-                    print("OK: \(statusCode)")
-                    completion(true)
+                    print("Post has been saved: \(statusCode)")
                 } else {
                     print("FAILURE: \(statusCode)")
-                    completion(false)
                 }
             } catch {
                 print("Failed to Send POST Request \(error)")
-                completion(false)
             }
         }
         return true
     }
 }
+

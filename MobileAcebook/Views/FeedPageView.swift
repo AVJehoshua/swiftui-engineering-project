@@ -12,8 +12,8 @@ struct FeedPageView: View {
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
     
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkMzQ4MzcyNjJmYTQ0OGViZTY2ZmE2IiwiaWF0IjoxNzA4NTQ5NzI2LCJleHAiOjE3MDg1NTMzMjZ9.AN1Z0GLSsh1VPqnNaVgGeF6VA2JSgSjcriyFrqcUysk"
-    
+    let token = "Needs a token"
+  
     var body: some View {
         VStack(spacing:0){
             Text("Acebook")
@@ -46,7 +46,7 @@ struct FeedPageView: View {
 
         }
         .onAppear{
-            _ = Posts.fetchPosts(token: token )
+            _ = Posts.fetchPosts()
         }
     }
 }
