@@ -14,7 +14,7 @@ struct TestView: View {
                 .tabItem {
                     Label("Feed", systemImage: "list.bullet.below.rectangle")
                 }
-            SignUpView()
+            ProfilePageView(username: username)
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle.fill")
                 }
