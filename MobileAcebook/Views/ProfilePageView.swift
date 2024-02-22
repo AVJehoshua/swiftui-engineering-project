@@ -8,24 +8,33 @@
 import SwiftUI
 
 struct ProfilePageView: View {
-    
+//    @State var isLoggedIn: Bool
     var username: String
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 20) {
-                HStack(spacing: 20) {
-                    Image(systemName: "person.crop.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 125, height: 160)
-                        .symbolRenderingMode(.hierarchical)
-                        .foregroundStyle(.blue)
-                    
+            VStack(alignment: .trailing, spacing: 20) {
+                Button("Logout") {
+//                    isLoggedIn = false
+                }
+                
+                HStack(spacing: 20)
+                {
+//                    Image(systemName: "person.crop.circle.fill")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 125, height: 160)
+//                        .symbolRenderingMode(.hierarchical)
+//                        .foregroundStyle(.blue)
+//                    
                     
                     Text("Welcome, \(username)!")
-                        .font(.title)
+                        .font(.title2)
                         .fontWeight(.bold)
+                    
+                    ImageUploadView()
+                               
+                    Spacer()
                 }
                 
                 Spacer()
