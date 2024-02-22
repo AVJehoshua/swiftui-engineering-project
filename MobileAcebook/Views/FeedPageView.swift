@@ -13,7 +13,7 @@ struct FeedPageView: View {
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
     
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkNDhmYmJlMGU3ZWMyMzRjMzc2ZTgxIiwiaWF0IjoxNzA4NTExMDMyLCJleHAiOjE3MDg1MTQ2MzJ9.Pwu86XR28vdhyaH_KjkakaVw5dSA47OAXWYe43T6Erg"
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVkNjEyNDU4MDdjZTc3ZjY4NDFmZjVmIiwiaWF0IjoxNzA4NjEwNjI1LCJleHAiOjE3MDg2MTEyMjV9.EEEP9P-McpMLsE_mfLFqIIJV7g1I6_TPVPf04ch5SFg"
     
     var body: some View {
         VStack{
@@ -33,18 +33,20 @@ struct FeedPageView: View {
                 Text("No posts")
             }else {
                 List(Posts.postsList) {post in
-                    PostView(post: post, postViewModel: Posts, token: token)
+                    PostView(post: post, postViewModel: PostsViewModel(), token: token)
                 }.onAppear()
                 
             }
 
         }
         .onAppear{
-            _ = Posts.fetchPosts(token: token )
+            Posts.fetchPosts(token: token )
         }
     }
 }
 
 #Preview {
-    FeedPageView()
+    FeedPageView(Posts: PostsViewModel())
+    
+    
 }
