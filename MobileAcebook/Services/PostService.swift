@@ -9,13 +9,13 @@ import Foundation
 
 class PostsViewModel: ObservableObject {
     @Published var postsList: [Post] = []
-    @Published var userDetails: User = User(username: "", password: "", email: "")
+    @Published var userDetails: User = User(username: "", password: "", email: "", avatar: "")
     
     func findPost(byID id: String) -> Post? {
         return postsList.first(where: { $0.id == id })
     }
     
-    func fetchPosts(token: String) -> String{
+    func fetchPosts() -> String{
         let url = URL(string: "http://127.0.0.1:8080/posts")!
         
         
@@ -39,7 +39,7 @@ class PostsViewModel: ObservableObject {
         return ""
     }
     
-    func getUserDetails(userCreatedBy: String, token: String, post_id: String) -> User {
+    func getUserDetails(userCreatedBy: String, post_id: String) -> User {
         let url = URL(string: "http://127.0.0.1:8080/posts/\(userCreatedBy)")!
 
         var postToUpdate = findPost(byID: post_id)!
