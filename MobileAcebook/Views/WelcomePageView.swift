@@ -79,27 +79,14 @@ struct WelcomePageView: View {
                     Spacer()
                     Spacer()
                     
-                    Button("Create a new account") {
-                        // TODO: sign up logic
+                    NavigationLink(destination: SignUpView(isLoggedIn: $isLoggedIn)) {
+                        Text("Create a new account")
+                            .padding(10)
+                            .foregroundColor(.white)
+                            .background(Color(hex: "#3468C0"))
+                            .cornerRadius(10)
+                            .accessibilityIdentifier("signUpButton")
                     }
-                    .buttonStyle(.borderedProminent)
-                    .tint(Color(hex: "#3468C0"))
-                    .accessibilityIdentifier("signUpButton")
-                    
-                    
-//                    Button("Sign Up") {
-//                        signUp.signUpUser(user: User(username: "Test username", password: "Test password", email: "Test2@email.com", avatar:"/person.fill")) { success in
-//                            if success {
-//                                // Handle successful signup
-//                                print("User signed up successfully!")
-//                            } else {
-//                                // Handle signup failure
-//                                print("Error signing up!")
-//                            }
-//                        }
-//                    }
-                    
-                    .accessibilityIdentifier("signUpButton")
                     
                     Spacer()
                     
