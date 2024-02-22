@@ -28,6 +28,8 @@
 		D32326F82B84D39100C3E23B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32326F72B84D39100C3E23B /* Post.swift */; };
 		D32326FA2B84D39B00C3E23B /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32326F92B84D39B00C3E23B /* PostService.swift */; };
 		D3AEDD7A2B83BD7300D14E29 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEDD792B83BD7300D14E29 /* SignUpView.swift */; };
+		EA1266D32B87689B0021FEA0 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1266D22B87689B0021FEA0 /* UserDataService.swift */; };
+		EA1266D52B8769860021FEA0 /* MockUserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1266D42B8769860021FEA0 /* MockUserDataService.swift */; };
 		EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */; };
 		EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB42B84DF5F00DBD927 /* MockPostService.swift */; };
 		EA682AB72B84E45400DBD927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB62B84E45400DBD927 /* PostView.swift */; };
@@ -75,6 +77,8 @@
 		D32326F72B84D39100C3E23B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D32326F92B84D39B00C3E23B /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		D3AEDD792B83BD7300D14E29 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		EA1266D22B87689B0021FEA0 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		EA1266D42B8769860021FEA0 /* MockUserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDataService.swift; sourceTree = "<group>"; };
 		EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
 		EA682AB42B84DF5F00DBD927 /* MockPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostService.swift; sourceTree = "<group>"; };
 		EA682AB62B84E45400DBD927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				D32326F92B84D39B00C3E23B /* PostService.swift */,
 				5B4E8C602B85593600AFE31E /* SignUpService.swift */,
 				A5BD27F52B865BDB0029C7F5 /* NewPostService.swift */,
+				EA1266D22B87689B0021FEA0 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				AE5D85E22AC9AFD2009680C6 /* MockAuthenticationService.swift */,
+				EA1266D42B8769860021FEA0 /* MockUserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				D32326FA2B84D39B00C3E23B /* PostService.swift in Sources */,
 				AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */,
 				D32326F82B84D39100C3E23B /* Post.swift in Sources */,
+				EA1266D32B87689B0021FEA0 /* UserDataService.swift in Sources */,
 				A5BD27F62B865BDB0029C7F5 /* NewPostService.swift in Sources */,
 				AE5D85E82AC9B29A009680C6 /* User.swift in Sources */,
 				5B4E8C612B85593600AFE31E /* SignUpService.swift in Sources */,
@@ -372,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1266D52B8769860021FEA0 /* MockUserDataService.swift in Sources */,
 				AE5D85C12AC8A224009680C6 /* MobileAcebookTests.swift in Sources */,
 				AE5D85E32AC9AFD2009680C6 /* MockAuthenticationService.swift in Sources */,
 			);
