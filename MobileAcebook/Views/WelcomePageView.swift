@@ -107,9 +107,9 @@ struct WelcomePageView: View {
             }
         }
     }
-    struct WelcomePageView_Previews: PreviewProvider {
-        static var previews: some View {
-            WelcomePageView()
-        }
-    }
+//    struct WelcomePageView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            WelcomePageView()
+//        }
+//    }
 }

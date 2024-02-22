@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		40355F642B8634B80036475B /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40355F632B8634B80036475B /* TabView.swift */; };
 		40A236BE2B84CC910088F49C /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A236BD2B84CC910088F49C /* LoginService.swift */; };
-		5B8601C82B83BAB500BF982E /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8601C72B83BAB500BF982E /* SignUp.swift */; };
 		5B4E8C612B85593600AFE31E /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E8C602B85593600AFE31E /* SignUpService.swift */; };
+		5B8601C82B83BAB500BF982E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		5BB4F2522B84D4F6004D949D /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4F2512B84D4F6004D949D /* ProfilePageView.swift */; };
+		A5BD27F62B865BDB0029C7F5 /* NewPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD27F52B865BDB0029C7F5 /* NewPostService.swift */; };
 		AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */; };
 		AE5D85B42AC8A224009680C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE5D85B32AC8A224009680C6 /* Assets.xcassets */; };
 		AE5D85B72AC8A224009680C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE5D85B62AC8A224009680C6 /* Preview Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		5B4E8C602B85593600AFE31E /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		5B8601C62B83A93700BF982E /* MobileAcebook.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MobileAcebook.xctestplan; sourceTree = "<group>"; };
 		5BB4F2512B84D4F6004D949D /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
+		A5BD27F52B865BDB0029C7F5 /* NewPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostService.swift; sourceTree = "<group>"; };
 		AE5D85AC2AC8A221009680C6 /* MobileAcebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAcebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAcebookApp.swift; sourceTree = "<group>"; };
 		AE5D85B32AC8A224009680C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,11 +171,11 @@
 			isa = PBXGroup;
 			children = (
 				EA682AB42B84DF5F00DBD927 /* MockPostService.swift */,
-				5B8601C72B83BAB500BF982E /* SignUp.swift */,
 				AE5D85E02AC9AFA9009680C6 /* AuthenticationService.swift */,
 				40A236BD2B84CC910088F49C /* LoginService.swift */,
 				D32326F92B84D39B00C3E23B /* PostService.swift */,
 				5B4E8C602B85593600AFE31E /* SignUpService.swift */,
+				A5BD27F52B865BDB0029C7F5 /* NewPostService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -352,12 +354,13 @@
 				EA682AB72B84E45400DBD927 /* PostView.swift in Sources */,
 				40355F642B8634B80036475B /* TabView.swift in Sources */,
 				EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */,
-				5B8601C82B83BAB500BF982E /* SignUp.swift in Sources */,
+				5B8601C82B83BAB500BF982E /* (null) in Sources */,
 				5BB4F2522B84D4F6004D949D /* ProfilePageView.swift in Sources */,
 				AE5D85E62AC9B077009680C6 /* AuthenticationServiceProtocol.swift in Sources */,
 				D32326FA2B84D39B00C3E23B /* PostService.swift in Sources */,
 				AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */,
 				D32326F82B84D39100C3E23B /* Post.swift in Sources */,
+				A5BD27F62B865BDB0029C7F5 /* NewPostService.swift in Sources */,
 				AE5D85E82AC9B29A009680C6 /* User.swift in Sources */,
 				5B4E8C612B85593600AFE31E /* SignUpService.swift in Sources */,
 				D3AEDD7A2B83BD7300D14E29 /* SignUpView.swift in Sources */,
