@@ -5,7 +5,6 @@
 //  Created by Alan Gardiner on 22/02/2024.
 //
 
-let email: String = "test@test.com"
 
 import Foundation
 
