@@ -16,8 +16,8 @@ struct SignUpView: View {
     @State private var avatar = ""
     @State private var isSignedUp = false
     @State private var isValidInput = false
-    @StateObject var authenticationManager = AuthenticationManager()
-    
+    @EnvironmentObject var authenticationManager: AuthenticationManager
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -70,6 +70,7 @@ struct SignUpView: View {
                                         password = ""
                                     } else {
                                         print("Error logging in")
+
                                     }
                                 }
                             } else {
@@ -88,7 +89,7 @@ struct SignUpView: View {
                 Spacer()
                 
                 
-                if authenticationManager.isLoggedIn {
+                if isSignedUp {
                     NavigationLink(
                         destination: ProfilePageView(username: username),
                         isActive: $isSignedUp) {

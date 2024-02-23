@@ -11,6 +11,7 @@ struct FeedPageView: View {
 //    @ObservedObject var viewModel = PostModel()
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
+    @EnvironmentObject var authenticationManager: AuthenticationManager
     
     let token = "Needs a token"
   
@@ -27,7 +28,7 @@ struct FeedPageView: View {
                                 .foregroundColor(Color.white)
                                 .background(Color(hex: "3468C0"))
                             
-                            CreatePostView(token: token)
+                            CreatePostView()
                                 .padding(25)
                         }
                         .background(Color(hex: "3468C0"))
