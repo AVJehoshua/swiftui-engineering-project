@@ -31,9 +31,8 @@ struct CreatePostView: View {
             
             Button("Submit"){
                 if !newPost.isEmpty{
-//                        let result = mockCreatePostService(post: newPost, token: token)
-                    createPostService.createPost(newPost: NewPost(message: newPost)) { success in
-                        if success{
+                    createPostService.createPost(newPost: NewPost(message: newPost)) { result in
+                        if result{
                             newPost = ""
                             print("New post created")
                         }
@@ -42,7 +41,10 @@ struct CreatePostView: View {
                         }
                     }
                 }
-                
+            }
+        }
+    }
+}
                 // Haven't decided which way of writing button is better depending on how we want to style it.
                 
                 //                Button(action: {
@@ -58,10 +60,7 @@ struct CreatePostView: View {
                 //                }, label: {
                 //                    Text("Submit")
                 //                })
-            }
-        }
-    }
-}
+
 
 #Preview {
     CreatePostView(token: "Test Token")

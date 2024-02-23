@@ -12,7 +12,7 @@ struct NewPost: Codable {
 }
 
 class CreatePost {
-    func createPost(newPost: NewPost) -> Bool {
+    func createPost(newPost: NewPost, completion: @escaping (Bool) -> Void) {
         
         let url = URL(string: "http://127.0.0.1:8080/posts")!
         var request = URLRequest(url: url)
@@ -34,19 +34,24 @@ class CreatePost {
                 guard let jsonToken = try? JSONSerialization.jsonObject(with: tokenData, options: []) as? [String: Any],
                       let tokenValue = jsonToken["token"] as? String else {
                     print("Unable to decode token data from JSON or no token data received")
-                    return }
+                    completion(false)
+                    return
+                }
                 
                 token = tokenValue
                 if statusCode == 201 {
                     print("Post has been saved: \(statusCode)")
+                    completion(true)
                 } else {
                     print("FAILURE: \(statusCode)")
+                    completion(false)
                 }
             } catch {
                 print("Failed to Send POST Request \(error)")
+                completion(false)
             }
         }
-        return true
+        return
     }
 }
 
