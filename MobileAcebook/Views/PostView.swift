@@ -10,7 +10,6 @@ import SwiftUI
 struct PostView: View {
     let post: Post
     @ObservedObject var postViewModel: PostsViewModel
-    let token: String
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -82,7 +81,7 @@ struct PostView: View {
 #if DEBUG
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: Post(id: "1", message: "This is a test post", createdBy: "test created by", createdAt: "test created at", comments: 1, likes: ["1"]), postViewModel: PostsViewModel(), token: "test token")
+        PostView(post: Post(id: "1", message: "This is a test post", createdBy: "test created by", createdAt: "test created at", comments: 1, likes: ["1"]), postViewModel: PostsViewModel())
     }
 }
 #endif

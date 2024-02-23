@@ -9,7 +9,7 @@ import Foundation
 
 class MockPostsViewModel: ObservableObject {
     @Published var postsList: [Post] = []
-    @Published var userDetails: User = User(username: "MockUser", password: "MockPassword", email: "Mock@email.com")
+    @Published var userDetails: User = User(username: "MockUser", password: "MockPassword", email: "Mock@email.com", avatar: nil)
     
     func findPost(byID id: String) -> Post? {
         return postsList.first(where: { $0.id == id })
