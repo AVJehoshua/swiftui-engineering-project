@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TestView: View {
+//    @Binding var isLoggedIn: Bool
+    @EnvironmentObject var authenticationManager: AuthenticationManager
+    
     var body: some View {
         TabView {
             FeedPageView()
@@ -24,7 +27,7 @@ struct TestView: View {
         
     }
 }
-
-#Preview {
-    TestView()
-}
+//
+//#Preview {
+//    TestView()
+//}

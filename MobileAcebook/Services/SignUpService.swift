@@ -21,7 +21,6 @@ class SignUp {
         return emailPredicate.evaluate(with: email)
     }
     
-    
     func isValidPassword(password: String) -> Bool {
         let minLength = 8
         let containsUppercase = password.rangeOfCharacter(from: .uppercaseLetters) != nil
