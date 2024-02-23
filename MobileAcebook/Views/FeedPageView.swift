@@ -9,34 +9,49 @@ import SwiftUI
 
 struct FeedPageView: View {
 //    @ObservedObject var viewModel = PostModel()
-
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
     
+    let token = "Needs a token"
+  
     var body: some View {
-        VStack{
-            Text("Acebook")
-                .font(.title)
-                .frame(maxWidth: .infinity)
-                .background(.blue)
-                .foregroundColor(.white)
-            
-            Spacer()
         
-            // Comment
-            Text("Create New Post")
-            //All the posts in DB
+        VStack {
+            Section {
+                            Text("Acebook")
+                                .font(.title)
+                                .multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(25)
+                                .padding([.bottom], -40)
+                                .foregroundColor(Color.white)
+                                .background(Color(hex: "3468C0"))
+                            
+                            CreatePostView(token: token)
+                                .padding(25)
+                        }
+                        .background(Color(hex: "3468C0"))
+                            
+        VStack{
+         Spacer()//All the posts in DB
             //Gets back JSON object that has "posts" : [array of posts objects]
             if Posts.postsList.isEmpty {
                 Text("No posts")
             }else {
                 List(Posts.postsList) {post in
                     PostView(post: post, postViewModel: Posts, token: token)
-                }.onAppear()
-                
+                }
+                //                    .listStyle(PlainListStyle())
+                .onAppear()
             }
-
+            
         }
+        .background(Color.white)
+        .frame(maxWidth: .infinity)
+
+    }
+        .background(Color(hex: "3468C0"))
+
         .onAppear{
             _ = Posts.fetchPosts()
         }
