@@ -22,6 +22,8 @@ struct TestView: View {
                     Label("Profile", systemImage: "person.crop.circle.fill")
                 }
         }
+        .foregroundColor(Color.white)
+        .background(Color(hex: "3468C0"))
         
     }
 }

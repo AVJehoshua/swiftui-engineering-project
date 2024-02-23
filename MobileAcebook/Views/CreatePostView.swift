@@ -24,7 +24,7 @@ struct CreatePostView: View {
             HStack{
                 TextField("What's on your mind?", text: $newPost)
                     .padding(6)
-                    .background(.gray.opacity(0.1))
+                    .background(.white.opacity(0.9))
                     .cornerRadius(10)
 
                 Button("Submit"){
@@ -39,6 +39,7 @@ struct CreatePostView: View {
                         }
                     }
                 }
+                .foregroundColor(.white)
                 
 // Haven't decided which way of writing button is better depending on how we want to style it.
                 

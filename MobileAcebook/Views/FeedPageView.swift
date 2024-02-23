@@ -15,36 +15,43 @@ struct FeedPageView: View {
     let token = "Needs a token"
   
     var body: some View {
-        VStack(spacing:0){
-            Text("Acebook")
-                .font(.title)
-                .frame(maxWidth: .infinity)
-                .background(.blue)
-                .foregroundColor(.white)
-            
-//            Spacer()
-//            Form{
-            CreatePostView(token: token)
-//                .frame(maxWidth: 300, maxHeight: 80)
-                .padding(25)
-//            }
-//            .scrollContentBackground(.hidden)
-//            .frame(maxHeight: 100)
-//            .background(.red)
-            
-                //All the posts in DB
-                //Gets back JSON object that has "posts" : [array of posts objects]
-                if Posts.postsList.isEmpty {
-                    Text("No posts")
-                }else {
-                    List(Posts.postsList) {post in
-                        PostView(post: post, postViewModel: Posts, token: token)
-                    }
-//                    .listStyle(PlainListStyle())
-                    .onAppear()
+        
+        VStack {
+            Section {
+                            Text("Acebook")
+                                .font(.title)
+                                .multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(25)
+                                .padding([.bottom], -40)
+                                .foregroundColor(Color.white)
+                                .background(Color(hex: "3468C0"))
+                            
+                            CreatePostView(token: token)
+                                .padding(25)
+                        }
+                        .background(Color(hex: "3468C0"))
+                            
+        VStack{
+         Spacer()//All the posts in DB
+            //Gets back JSON object that has "posts" : [array of posts objects]
+            if Posts.postsList.isEmpty {
+                Text("No posts")
+            }else {
+                List(Posts.postsList) {post in
+                    PostView(post: post, postViewModel: Posts, token: token)
                 }
-
+                //                    .listStyle(PlainListStyle())
+                .onAppear()
+            }
+            
         }
+        .background(Color.white)
+        .frame(maxWidth: .infinity)
+
+    }
+        .background(Color(hex: "3468C0"))
+
         .onAppear{
             _ = Posts.fetchPosts()
         }
