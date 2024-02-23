@@ -16,37 +16,54 @@ struct SignUpView: View {
     @State private var avatar = ""
     @State private var isSignedUp = false
     @State private var isValidInput = false
-    @StateObject var authenticationManager = AuthenticationManager()
-    
+    @EnvironmentObject var authenticationManager: AuthenticationManager
+
     var body: some View {
         NavigationView {
             VStack {
-                Image("makers-logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200, height: 200)
-                    .accessibilityIdentifier("makers-logo")
                 
-                Form {
-                    Section {
+                VStack {
+                    Image("Logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                        .accessibilityIdentifier("makers-logo")
+                        .padding([.top], 30)
+                    
+                    Text("Create a new account!")
+                        .font(.title)
+                        .padding(.bottom, 20)
+                        .padding([.top], 20)
+                        .accessibilityIdentifier("welcomeText")
+                        .foregroundColor(Color(hex: "3468C0"))
+                }
+                
                         TextField("Username", text: $username)
-                    }
-                    
-                    Section {
+                    .textInputAutocapitalization(.never)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
+                            
                         TextField("Email", text: $email)
-                            .autocapitalization(.none)
-                    }
-                    
-                    Section {
+                    .textInputAutocapitalization(.never)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
+                
                         SecureField("Password", text: $password)
-                    }
+                    .textInputAutocapitalization(.never)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
                     
                     Button("Create an account") {
                         let user = User(username: username, password: password, email: email, avatar: avatar)
                         if signUp.isValidEmail(email: user.email) && signUp.isValidPassword(password: user.password) {
                             signUp.signUpUser(user: user) { success in
                                 if success {
-                                    authenticationManager.isLoggedIn = true
+                                    DispatchQueue.main.async {
+                                        authenticationManager.isLoggedIn = true
+                                    }
                                     print("User signed up successfully!")
                                     let service = LoginService()
                                     let user = UserData(email: email, password: password)
@@ -54,6 +71,7 @@ struct SignUpView: View {
                                         if success {
                                             email = ""
                                             password = ""
+                                            self.isSignedUp = true
                                         } else {
                                             print("Error logging in")
                                         }
@@ -67,13 +85,13 @@ struct SignUpView: View {
                             print("Invalid user details!")
                         }
                     }
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .background(.blue)
-                    .listRowBackground(Color.blue)
-                }
+                    .padding()
+                    .buttonStyle(.borderedProminent)
+                    .tint(Color(hex: "#3468C0"))
+                Spacer()
+            }.frame(width: 300)
                 
-                if authenticationManager.isLoggedIn {
+                if isSignedUp {
                     NavigationLink(
                         destination: ProfilePageView(username: username),
                             isActive: $isSignedUp) {
@@ -84,7 +102,7 @@ struct SignUpView: View {
             }
         }
     }
-}
+
 
 
 

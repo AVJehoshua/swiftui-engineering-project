@@ -11,14 +11,14 @@ struct FeedPageView: View {
 //    @ObservedObject var viewModel = PostModel()
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
+    @EnvironmentObject var authenticationManager: AuthenticationManager
+
     func LoadPosts() -> some View {
         return List(Posts.postsList) {post in
             PostView(post: post, postViewModel: Posts, token: token)
         }
         //                    .listStyle(PlainListStyle())
     }
-
-
     var body: some View {
         
         VStack {

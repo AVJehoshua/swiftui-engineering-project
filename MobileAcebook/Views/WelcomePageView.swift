@@ -29,7 +29,8 @@ struct WelcomePageView: View {
     @State private var password = ""
 
     @EnvironmentObject var authenticationManager: AuthenticationManager
-//    @Binding var isLoggedIn: Bool
+    
+    let userService = UserService()
     
     var body: some View {
         NavigationView {
@@ -42,6 +43,14 @@ struct WelcomePageView: View {
                         .padding(.bottom, 20)
                         .accessibilityIdentifier("welcomeText")
                         .foregroundColor(Color(hex: "3468C0"))
+                    
+                    Image("Logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                        .accessibilityIdentifier("makers-logo")
+                        .padding([.top], 20)
+                    
                     Spacer()
                     VStack{
                         
@@ -63,9 +72,24 @@ struct WelcomePageView: View {
                             let service = LoginService()
                             _ = service.login(user){ success in
                                 if success {
+                                    DispatchQueue.main.async {
+                                        authenticationManager.isLoggedIn = true
+                                    }
+
+                                    userService.getuser(email: email) { user in
+                                        if let user = user {
+                                            if let USERNAME = user.username{
+                                                print("User data received: \(USERNAME)")
+                                                username = user.username ?? ""
+                                                print("Global username set: \(username)")
+                                            }
+                                        }else{
+                                            print("Failed to get user data")
+                                        }
+                                    }
+
                                     email = ""
                                     password = ""
-                                    authenticationManager.isLoggedIn = true
                                 } else {
                                     print("Error logging in")
                                 }
@@ -95,9 +119,9 @@ struct WelcomePageView: View {
             }
         }
     }
-//    struct WelcomePageView_Previews: PreviewProvider {
-//        static var previews: some View {
-//            WelcomePageView()
-//        }
-//    }
+    struct WelcomePageView_Previews: PreviewProvider {
+        static var previews: some View {
+            WelcomePageView()
+        }
+    }
 }
