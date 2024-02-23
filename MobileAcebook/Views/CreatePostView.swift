@@ -27,6 +27,7 @@ struct CreatePostView: View {
                 .padding(6)
                 .background(.white)
                 .cornerRadius(10)
+                .foregroundColor(.black)
             
             Button("Submit"){
                 if !newPost.isEmpty{
