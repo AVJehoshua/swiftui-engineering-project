@@ -9,12 +9,15 @@ import SwiftUI
 
 struct ProfilePageView: View {
     @EnvironmentObject var authenticationManager: AuthenticationManager
+    @EnvironmentObject var refreshTrigger: RefreshTrigger
+
     var username: String
     
     var body: some View {
         NavigationView {
             VStack(alignment: .trailing, spacing: 20) {
                 Button("Logout") {
+                    refreshTrigger.trigger = false
                     authenticationManager.isLoggedIn = false
                 }
                 
