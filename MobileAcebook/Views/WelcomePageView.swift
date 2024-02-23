@@ -29,7 +29,6 @@ struct WelcomePageView: View {
     @State private var email = ""
     @State private var password = ""
     @EnvironmentObject var authenticationManager: AuthenticationManager
-//    @Binding var isLoggedIn: Bool
     
     var body: some View {
         NavigationView {
@@ -63,9 +62,11 @@ struct WelcomePageView: View {
                             let service = LoginService()
                             _ = service.login(user){ success in
                                 if success {
+                                    DispatchQueue.main.async {
+                                        authenticationManager.isLoggedIn = true
+                                    }
                                     email = ""
                                     password = ""
-                                    authenticationManager.isLoggedIn = true
                                 } else {
                                     print("Error logging in")
                                 }
