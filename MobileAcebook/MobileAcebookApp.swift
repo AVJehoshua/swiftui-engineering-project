@@ -17,7 +17,7 @@ struct MobileAcebookApp: App {
         WindowGroup {
             NavigationView {
                 if isLoggedIn {
-                    TestView()
+                    TestView(isLoggedIn: false)
                 } else {
                     WelcomePageView(isLoggedIn: $isLoggedIn)
                 }

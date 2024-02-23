@@ -74,7 +74,7 @@ struct SignUpView: View {
                 }
                 if isSignedUp {
                     NavigationLink(
-                        destination: ProfilePageView(isLoggedIn: true, username: username),
+                        destination: ProfilePageView(/*isLoggedIn: true, */username: username),
                             isActive: $isSignedUp) {
                             EmptyView()
                     }

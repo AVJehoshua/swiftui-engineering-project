@@ -79,7 +79,7 @@ struct WelcomePageView: View {
                     Spacer()
                     Spacer()
                     
-                    NavigationLink(destination: SignUpView(isLoggedIn: $isLoggedIn)) {
+                    NavigationLink(destination: ProfilePageView(username: username)) {
                         Text("Create a new account")
                             .padding(10)
                             .foregroundColor(.white)
