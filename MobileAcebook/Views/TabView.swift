@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TestView: View {
+//    @Binding var isLoggedIn: Bool
+    @EnvironmentObject var authenticationManager: AuthenticationManager
+    
     var body: some View {
         TabView {
             FeedPageView()
@@ -19,10 +22,12 @@ struct TestView: View {
                     Label("Profile", systemImage: "person.crop.circle.fill")
                 }
         }
+        .foregroundColor(Color.white)
+        .background(Color(hex: "3468C0"))
         
     }
 }
-
-#Preview {
-    TestView()
-}
+//
+//#Preview {
+//    TestView()
+//}

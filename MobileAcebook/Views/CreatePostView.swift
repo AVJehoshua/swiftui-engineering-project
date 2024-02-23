@@ -17,7 +17,6 @@ import SwiftUI
 
 struct CreatePostView: View {
     @State private var newPost: String = ""
-    var token: String
     
     let createPostService = CreatePost()
     
@@ -45,23 +44,9 @@ struct CreatePostView: View {
         }
     }
 }
-                // Haven't decided which way of writing button is better depending on how we want to style it.
-                
-                //                Button(action: {
-                //                    if !newPost.isEmpty{
-                //                        let result = mockCreatePostService(post: newPost, token: token)
-                //                        if result {
-                //                            newPost = ""
-                //                            print("New new created")
-                //                        }else{
-                //                            print("Couldn't create post")
-                //                        }
-                //                    }
-                //                }, label: {
-                //                    Text("Submit")
-                //                })
+
 
 
 #Preview {
-    CreatePostView(token: "Test Token")
+    CreatePostView()
 }

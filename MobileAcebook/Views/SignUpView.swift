@@ -16,7 +16,7 @@ struct SignUpView: View {
     @State private var avatar = ""
     @State private var isSignedUp = false
     @State private var isValidInput = false
-    @Binding var isLoggedIn: Bool
+    @StateObject var authenticationManager = AuthenticationManager()
     
     var body: some View {
         NavigationView {
@@ -46,6 +46,7 @@ struct SignUpView: View {
                         if signUp.isValidEmail(email: user.email) && signUp.isValidPassword(password: user.password) {
                             signUp.signUpUser(user: user) { success in
                                 if success {
+                                    authenticationManager.isLoggedIn = true
                                     print("User signed up successfully!")
                                     let service = LoginService()
                                     let user = UserData(email: email, password: password)
@@ -53,7 +54,6 @@ struct SignUpView: View {
                                         if success {
                                             email = ""
                                             password = ""
-                                            isLoggedIn = true
                                         } else {
                                             print("Error logging in")
                                         }
@@ -71,6 +71,15 @@ struct SignUpView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .background(.blue)
                     .listRowBackground(Color.blue)
+                }
+                
+                if authenticationManager.isLoggedIn {
+                    NavigationLink(
+                        destination: ProfilePageView(username: username),
+                            isActive: $isSignedUp) {
+                            EmptyView()
+                    }
+                    .hidden()
                 }
             }
         }

@@ -10,18 +10,24 @@ import SwiftUI
 var token = ""
 var username = ""
 
+class AuthenticationManager: ObservableObject {
+    @Published var isLoggedIn = false
+}
+
 @main
 struct MobileAcebookApp: App {
-    @State private var isLoggedIn = false
+    @StateObject var authenticationManager = AuthenticationManager()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                if isLoggedIn {
+                if authenticationManager.isLoggedIn {
                     TestView()
                 } else {
-                    WelcomePageView(isLoggedIn: $isLoggedIn)
+                    WelcomePageView()
                 }
             }
+            .environmentObject(authenticationManager)
         }
     }
 }
