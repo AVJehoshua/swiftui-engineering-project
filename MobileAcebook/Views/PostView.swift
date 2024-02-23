@@ -25,7 +25,6 @@ struct PostView: View {
         .onAppear{
             _ = postViewModel.getUserDetails(userCreatedBy: post.createdBy, post_id: post.id )
         }
-        .foregroundColor(.black)
     }
     
 }
