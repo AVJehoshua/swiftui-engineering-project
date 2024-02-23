@@ -25,7 +25,7 @@ struct CreatePostView: View {
         HStack{
             TextField("What's on your mind?", text: $newPost)
                 .padding(6)
-                .background(.gray.opacity(0.1))
+                .background(.white)
                 .cornerRadius(10)
             
             Button("Submit"){
@@ -40,7 +40,7 @@ struct CreatePostView: View {
                         }
                     }
                 }
-            }
+            }.foregroundColor(.white)
         }
     }
 }
