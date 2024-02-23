@@ -21,25 +21,40 @@ struct SignUpView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image("makers-logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200, height: 200)
-                    .accessibilityIdentifier("makers-logo")
                 
-                Form {
-                    Section {
+                VStack {
+                    Image("Logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                        .accessibilityIdentifier("makers-logo")
+                        .padding([.top], 30)
+                    
+                    Text("Create a new account!")
+                        .font(.title)
+                        .padding(.bottom, 20)
+                        .padding([.top], 20)
+                        .accessibilityIdentifier("welcomeText")
+                        .foregroundColor(Color(hex: "3468C0"))
+                }
+                
                         TextField("Username", text: $username)
-                    }
-                    
-                    Section {
+                    .textInputAutocapitalization(.never)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
+                            
                         TextField("Email", text: $email)
-                            .autocapitalization(.none)
-                    }
-                    
-                    Section {
+                    .textInputAutocapitalization(.never)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
+                
                         SecureField("Password", text: $password)
-                    }
+                    .textInputAutocapitalization(.never)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
                     
                     Button("Create an account") {
                         let user = User(username: username, password: password, email: email, avatar: avatar)
@@ -70,11 +85,11 @@ struct SignUpView: View {
                             print("Invalid user details!")
                         }
                     }
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .background(.blue)
-                    .listRowBackground(Color.blue)
-                }
+                    .padding()
+                    .buttonStyle(.borderedProminent)
+                    .tint(Color(hex: "#3468C0"))
+                Spacer()
+            }.frame(width: 300)
                 
                 if isSignedUp {
                     NavigationLink(
@@ -87,7 +102,7 @@ struct SignUpView: View {
             }
         }
     }
-}
+
 
 
 

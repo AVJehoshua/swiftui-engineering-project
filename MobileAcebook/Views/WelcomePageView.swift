@@ -41,6 +41,14 @@ struct WelcomePageView: View {
                         .padding(.bottom, 20)
                         .accessibilityIdentifier("welcomeText")
                         .foregroundColor(Color(hex: "3468C0"))
+                    
+                    Image("Logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                        .accessibilityIdentifier("makers-logo")
+                        .padding([.top], 20)
+                    
                     Spacer()
                     VStack{
                         
