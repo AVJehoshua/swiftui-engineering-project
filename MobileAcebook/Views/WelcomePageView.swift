@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let signUp = SignUp()
+
 extension Color {
     init(hex: String) {
         var cleanHexCode = hex.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -26,6 +28,7 @@ extension Color {
 struct WelcomePageView: View {
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var authenticationManager: AuthenticationManager
     
     var body: some View {
         NavigationView {
@@ -57,9 +60,17 @@ struct WelcomePageView: View {
                         Button("Sign in") {
                             let user = UserData(email: email, password: password)
                             let service = LoginService()
-                            let token = service.login(user)
-                            email = ""
-                            password = ""
+                            _ = service.login(user){ success in
+                                if success {
+                                    DispatchQueue.main.async {
+                                        authenticationManager.isLoggedIn = true
+                                    }
+                                    email = ""
+                                    password = ""
+                                } else {
+                                    print("Error logging in")
+                                }
+                            }
                         }
                         .padding()
                         .buttonStyle(.borderedProminent)
@@ -70,25 +81,24 @@ struct WelcomePageView: View {
                     Spacer()
                     Spacer()
                     
-                    Button("Create a new account") {
-                        // TODO: sign up logic
+                    NavigationLink(destination: SignUpView()) {
+                        Text("Create a new account")
+                            .padding(10)
+                            .foregroundColor(.white)
+                            .background(Color(hex: "#3468C0"))
+                            .cornerRadius(10)
+                            .accessibilityIdentifier("signUpButton")
                     }
-                    .buttonStyle(.borderedProminent)
-                    .tint(Color(hex: "#3468C0"))
-                    .accessibilityIdentifier("signUpButton")
-                   
+                    
+                    Spacer()
+                    
                 }
-               
             }
         }
-        
     }
-   
-    
     struct WelcomePageView_Previews: PreviewProvider {
         static var previews: some View {
             WelcomePageView()
         }
-
     }
 }

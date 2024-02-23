@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct TestView: View {
+//    @Binding var isLoggedIn: Bool
+    @EnvironmentObject var authenticationManager: AuthenticationManager
+    
     var body: some View {
         TabView {
             FeedPageView()
                 .tabItem {
                     Label("Feed", systemImage: "list.bullet.below.rectangle")
                 }
-            SignUpView()
+            ProfilePageView(username: username)
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle.fill")
                 }
         }
+        .foregroundColor(Color.white)
+        .background(Color(hex: "3468C0"))
         
     }
 }

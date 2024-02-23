@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		40355F642B8634B80036475B /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40355F632B8634B80036475B /* TabView.swift */; };
 		40A236BE2B84CC910088F49C /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A236BD2B84CC910088F49C /* LoginService.swift */; };
+		5B4E8C612B85593600AFE31E /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E8C602B85593600AFE31E /* SignUpService.swift */; };
+		5B8601C82B83BAB500BF982E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		5BB4F2522B84D4F6004D949D /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB4F2512B84D4F6004D949D /* ProfilePageView.swift */; };
+		A5BD27F62B865BDB0029C7F5 /* NewPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD27F52B865BDB0029C7F5 /* NewPostService.swift */; };
+		A5BD27F82B87690C0029C7F5 /* photoview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD27F72B87690C0029C7F5 /* photoview.swift */; };
 		5B67C26F2B8761F000C96BA0 /* MockPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B67C26E2B8761F000C96BA0 /* MockPostViewModel.swift */; };
 		5B8601C82B83BAB500BF982E /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8601C72B83BAB500BF982E /* SignUp.swift */; };
 		AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */; };
@@ -26,9 +31,13 @@
 		D32326F82B84D39100C3E23B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32326F72B84D39100C3E23B /* Post.swift */; };
 		D32326FA2B84D39B00C3E23B /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32326F92B84D39B00C3E23B /* PostService.swift */; };
 		D3AEDD7A2B83BD7300D14E29 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AEDD792B83BD7300D14E29 /* SignUpView.swift */; };
+		EA1266D32B87689B0021FEA0 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1266D22B87689B0021FEA0 /* UserDataService.swift */; };
+		EA1266D52B8769860021FEA0 /* MockUserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1266D42B8769860021FEA0 /* MockUserDataService.swift */; };
 		EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */; };
 		EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB42B84DF5F00DBD927 /* MockPostService.swift */; };
 		EA682AB72B84E45400DBD927 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682AB62B84E45400DBD927 /* PostView.swift */; };
+		EAFE18802B8646DA00A7B71A /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE187F2B8646DA00A7B71A /* CreatePostView.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +60,12 @@
 /* Begin PBXFileReference section */
 		40355F632B8634B80036475B /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		40A236BD2B84CC910088F49C /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		5B4E8C602B85593600AFE31E /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		5B67C26E2B8761F000C96BA0 /* MockPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostViewModel.swift; sourceTree = "<group>"; };
 		5B8601C62B83A93700BF982E /* MobileAcebook.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MobileAcebook.xctestplan; sourceTree = "<group>"; };
-		5B8601C72B83BAB500BF982E /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		5BB4F2512B84D4F6004D949D /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
+		A5BD27F52B865BDB0029C7F5 /* NewPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostService.swift; sourceTree = "<group>"; };
+		A5BD27F72B87690C0029C7F5 /* photoview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoview.swift; sourceTree = "<group>"; };
 		AE5D85AC2AC8A221009680C6 /* MobileAcebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAcebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAcebookApp.swift; sourceTree = "<group>"; };
 		AE5D85B32AC8A224009680C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,9 +84,12 @@
 		D32326F72B84D39100C3E23B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D32326F92B84D39B00C3E23B /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		D3AEDD792B83BD7300D14E29 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		EA1266D22B87689B0021FEA0 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		EA1266D42B8769860021FEA0 /* MockUserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDataService.swift; sourceTree = "<group>"; };
 		EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
 		EA682AB42B84DF5F00DBD927 /* MockPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPostService.swift; sourceTree = "<group>"; };
 		EA682AB62B84E45400DBD927 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		EAFE187F2B8646DA00A7B71A /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +117,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
+		4029DEDB2B84BCF30059B3B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40A236BF2B84CFD10088F49C /* TestView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+
 		AE5D85A32AC8A221009680C6 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +151,7 @@
 		AE5D85AE2AC8A221009680C6 /* MobileAcebook */ = {
 			isa = PBXGroup;
 			children = (
+				4029DEDB2B84BCF30059B3B9 /* Views */,
 				AE5D85B32AC8A224009680C6 /* Assets.xcassets */,
 				AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */,
 				AE5D85DF2AC9AF83009680C6 /* Models */,
@@ -168,10 +194,12 @@
 			isa = PBXGroup;
 			children = (
 				EA682AB42B84DF5F00DBD927 /* MockPostService.swift */,
-				5B8601C72B83BAB500BF982E /* SignUp.swift */,
 				AE5D85E02AC9AFA9009680C6 /* AuthenticationService.swift */,
 				40A236BD2B84CC910088F49C /* LoginService.swift */,
 				D32326F92B84D39B00C3E23B /* PostService.swift */,
+				5B4E8C602B85593600AFE31E /* SignUpService.swift */,
+				A5BD27F52B865BDB0029C7F5 /* NewPostService.swift */,
+				EA1266D22B87689B0021FEA0 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -180,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				AE5D85E22AC9AFD2009680C6 /* MockAuthenticationService.swift */,
+				EA1266D42B8769860021FEA0 /* MockUserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -209,7 +238,10 @@
 				EA172D8C2B84D2A800EE9C63 /* FeedPageView.swift */,
 				EA682AB62B84E45400DBD927 /* PostView.swift */,
 				D3AEDD792B83BD7300D14E29 /* SignUpView.swift */,
+				EAFE187F2B8646DA00A7B71A /* CreatePostView.swift */,
 				40355F632B8634B80036475B /* TabView.swift */,
+				5BB4F2512B84D4F6004D949D /* ProfilePageView.swift */,
+				A5BD27F72B87690C0029C7F5 /* photoview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,15 +380,21 @@
 				40A236BE2B84CC910088F49C /* LoginService.swift in Sources */,
 				EA682AB52B84DF5F00DBD927 /* MockPostService.swift in Sources */,
 				EA682AB72B84E45400DBD927 /* PostView.swift in Sources */,
+				EAFE18802B8646DA00A7B71A /* CreatePostView.swift in Sources */,
 				5B67C26F2B8761F000C96BA0 /* MockPostViewModel.swift in Sources */,
 				40355F642B8634B80036475B /* TabView.swift in Sources */,
 				EA172D8D2B84D2A800EE9C63 /* FeedPageView.swift in Sources */,
-				5B8601C82B83BAB500BF982E /* SignUp.swift in Sources */,
+				5B8601C82B83BAB500BF982E /* (null) in Sources */,
+				5BB4F2522B84D4F6004D949D /* ProfilePageView.swift in Sources */,
 				AE5D85E62AC9B077009680C6 /* AuthenticationServiceProtocol.swift in Sources */,
+				A5BD27F82B87690C0029C7F5 /* photoview.swift in Sources */,
 				D32326FA2B84D39B00C3E23B /* PostService.swift in Sources */,
 				AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */,
 				D32326F82B84D39100C3E23B /* Post.swift in Sources */,
+				EA1266D32B87689B0021FEA0 /* UserDataService.swift in Sources */,
+				A5BD27F62B865BDB0029C7F5 /* NewPostService.swift in Sources */,
 				AE5D85E82AC9B29A009680C6 /* User.swift in Sources */,
+				5B4E8C612B85593600AFE31E /* SignUpService.swift in Sources */,
 				D3AEDD7A2B83BD7300D14E29 /* SignUpView.swift in Sources */,
 				AE5D85DA2AC8A337009680C6 /* WelcomePageView.swift in Sources */,
 			);
@@ -366,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1266D52B8769860021FEA0 /* MockUserDataService.swift in Sources */,
 				AE5D85C12AC8A224009680C6 /* MobileAcebookTests.swift in Sources */,
 				AE5D85E32AC9AFD2009680C6 /* MockAuthenticationService.swift in Sources */,
 			);
