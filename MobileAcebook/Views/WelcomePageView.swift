@@ -67,6 +67,7 @@ struct WelcomePageView: View {
                                     DispatchQueue.main.async {
                                         authenticationManager.isLoggedIn = true
                                     }
+
                                     userService.getuser(email: email) { user in
                                         if let user = user {
                                             if let USERNAME = user.username{

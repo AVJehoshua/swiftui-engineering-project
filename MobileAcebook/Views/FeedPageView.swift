@@ -28,7 +28,7 @@ struct FeedPageView: View {
                                 .foregroundColor(Color.white)
                                 .background(Color(hex: "3468C0"))
                             
-                            CreatePostView(token: token)
+                            CreatePostView()
                                 .padding(25)
                         }
                         .background(Color(hex: "3468C0"))
