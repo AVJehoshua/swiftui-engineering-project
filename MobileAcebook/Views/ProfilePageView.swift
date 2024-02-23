@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ProfilePageView: View {
-//    @State var isLoggedIn: Bool
+    @EnvironmentObject var authenticationManager: AuthenticationManager
     var username: String
     
     var body: some View {
         NavigationView {
             VStack(alignment: .trailing, spacing: 20) {
                 Button("Logout") {
-//                    isLoggedIn = false
+                    authenticationManager.isLoggedIn = false
                 }
                 
                 HStack(spacing: 25)
@@ -45,10 +45,10 @@ struct ProfilePageView: View {
     }
 }
 
-#if DEBUG
-struct ProfilePageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfilePageView(username: "AVJehoshua")
-    }
-}
-#endif
+//#if DEBUG
+//struct ProfilePageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfilePageView(username: "AVJehoshua")
+//    }
+//}
+//#endif

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TestView: View {
-    @State var isLoggedIn: Bool
+//    @Binding var isLoggedIn: Bool
+    @EnvironmentObject var authenticationManager: AuthenticationManager
     
     var body: some View {
         TabView {

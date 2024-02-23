@@ -28,7 +28,8 @@ extension Color {
 struct WelcomePageView: View {
     @State private var email = ""
     @State private var password = ""
-    @Binding var isLoggedIn: Bool
+    @EnvironmentObject var authenticationManager: AuthenticationManager
+//    @Binding var isLoggedIn: Bool
     
     var body: some View {
         NavigationView {
@@ -64,7 +65,7 @@ struct WelcomePageView: View {
                                 if success {
                                     email = ""
                                     password = ""
-                                    isLoggedIn = true
+                                    authenticationManager.isLoggedIn = true
                                 } else {
                                     print("Error logging in")
                                 }
@@ -79,7 +80,7 @@ struct WelcomePageView: View {
                     Spacer()
                     Spacer()
                     
-                    NavigationLink(destination: ProfilePageView(username: username)) {
+                    NavigationLink(destination: SignUpView()) {
                         Text("Create a new account")
                             .padding(10)
                             .foregroundColor(.white)
