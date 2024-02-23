@@ -12,9 +12,13 @@ struct FeedPageView: View {
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
     @EnvironmentObject var authenticationManager: AuthenticationManager
-    
-    let token = "Needs a token"
-  
+
+    func LoadPosts() -> some View {
+        return List(Posts.postsList) {post in
+            PostView(post: post, postViewModel: Posts, token: token)
+        }
+        //                    .listStyle(PlainListStyle())
+    }
     var body: some View {
         
         VStack {
@@ -28,7 +32,7 @@ struct FeedPageView: View {
                                 .foregroundColor(Color.white)
                                 .background(Color(hex: "3468C0"))
                             
-                            CreatePostView()
+                CreatePostView()
                                 .padding(25)
                         }
                         .background(Color(hex: "3468C0"))
@@ -39,9 +43,7 @@ struct FeedPageView: View {
             if Posts.postsList.isEmpty {
                 Text("No posts")
             }else {
-                List(Posts.postsList) {post in
-                    PostView(post: post, postViewModel: Posts, token: token)
-                }
+                LoadPosts()
                 //                    .listStyle(PlainListStyle())
                 .onAppear()
             }

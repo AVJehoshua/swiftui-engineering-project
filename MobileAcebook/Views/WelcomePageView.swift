@@ -8,7 +8,6 @@
 import SwiftUI
 
 let signUp = SignUp()
-
 extension Color {
     init(hex: String) {
         var cleanHexCode = hex.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -28,6 +27,7 @@ extension Color {
 struct WelcomePageView: View {
     @State private var email = ""
     @State private var password = ""
+
     @EnvironmentObject var authenticationManager: AuthenticationManager
     
     let userService = UserService()
