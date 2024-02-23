@@ -14,20 +14,29 @@ class AuthenticationManager: ObservableObject {
     @Published var isLoggedIn = false
 }
 
+class RefreshTrigger: ObservableObject {
+    @Published var trigger = false
+}
+
 @main
 struct MobileAcebookApp: App {
     @StateObject var authenticationManager = AuthenticationManager()
+    @StateObject var refreshTrigger = RefreshTrigger()
+
     
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                if authenticationManager.isLoggedIn {
+                if refreshTrigger.trigger {
                     TestView()
-                } else {
+                } else if authenticationManager.isLoggedIn {
+                    TestView()
+                }else {
                     WelcomePageView()
                 }
             }
             .environmentObject(authenticationManager)
+            .environmentObject(refreshTrigger)
         }
     }
 }
