@@ -30,6 +30,8 @@ struct WelcomePageView: View {
     @State private var password = ""
     @EnvironmentObject var authenticationManager: AuthenticationManager
     
+    let userService = UserService()
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -65,6 +67,18 @@ struct WelcomePageView: View {
                                     DispatchQueue.main.async {
                                         authenticationManager.isLoggedIn = true
                                     }
+                                    userService.getuser(email: email) { user in
+                                        if let user = user {
+                                            if let USERNAME = user.username{
+                                                print("User data received: \(USERNAME)")
+                                                username = user.username ?? ""
+                                                print("Global username set: \(username)")
+                                            }
+                                        }else{
+                                            print("Failed to get user data")
+                                        }
+                                    }
+
                                     email = ""
                                     password = ""
                                 } else {
