@@ -11,6 +11,7 @@ struct FeedPageView: View {
 //    @ObservedObject var viewModel = PostModel()
 //    let mockPosts = MockDataService.getMockPosts()
     @ObservedObject var Posts = PostsViewModel()
+    @EnvironmentObject var authenticationManager: AuthenticationManager
     
     let token = "Needs a token"
   

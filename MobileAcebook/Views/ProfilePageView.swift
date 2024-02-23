@@ -40,6 +40,7 @@ struct ProfilePageView: View {
                 Spacer()
                 
             }
+            .foregroundColor(.black)
             .padding()
         }
     }
